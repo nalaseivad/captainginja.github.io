@@ -1,0 +1,61 @@
+
+/*--------------------------------------------------------------
+Set all the default CSS margins, sizing, etc. to 0
+Init baseline neutral font, color, etc.
+--------------------------------------------------------------*/
+html {
+  margin: 0;
+  -webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust:     100%;
+  font-family: sans-serif;
+  color: black;
+}
+
+body,
+button,
+input,
+select,
+textarea {
+  margin: 0;
+	font-size: 12px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 1em;
+  margin: 0;
+  font-weight: normal;
+}
+
+p,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+}
+
+table {
+  border-spacing: 0;
+  border-color: black;
+  border-collapse: collapse;
+}
+
+thead {
+  vertical-align: bottom;
+}
+
+th {
+  font-weight: normal;
+  text-align: left;
+}
+
+tbody {
+  vertical-align: bottom;
+}

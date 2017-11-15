@@ -1,21 +1,32 @@
 ---
-layout: default
+layout: site
 ---
 
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
+{% if page.mathjax == 1 %}
+  {% include mathjax.html %}
+{% endif %}
 
 <div class="post-header">
-  <div class="title">{{ page.title }}</div>
-  <div class="sub-title">{{ page.sub_title }}</div>
-  <div class="date">{{ page.date | date_to_string }}</div>
+  <h1 class="title">{{ page.title }}</h1>
+  <h2 class="sub-title">{{ page.sub_title }}</h2>
+  <h3 class="date">{{ page.date | date_to_string }}</h3>
 </div>
 
-<img src="{{ page.featured_image }}"
-     class="center-image"
-     alt="{{ page.featured_image_alt_text }}"
-     title="{{ page.featured_image_title }}" />
+<div class="featured-image-container" width="{{ page.featured_image_width }}">
+{% if page.featured_image_link %}
+  <a href="{{ page.featured_image_link }}" class="featured-image-link"> 
+{% endif %}
+  <img src="{{ page.featured_image }}"
+      class="featured-image"
+      alt="{{ page.featured_image_alt_text }}"
+      title="{{ page.featured_image_title }}"
+      width="{{ page.featured_image_width }}" />
+{% if page.featured_image_link %}
+  </a>
+{% endif %}
+</div>
 
 <div class="post-body">
   {{ content }}
 </div>
+

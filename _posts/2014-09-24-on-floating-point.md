@@ -1,11 +1,12 @@
 ---
 layout: post
 title: "On Floating Point"
-sub_title: "A story without a point ..."
-date: 2017-11-08
 featured_image: /images/floating_point.png
 featured_image_alt_text: "Floating Point"
 featured_image_title: "Holy shit!  A massive, floating, disembodied hand!"
+featured_image_width: 450
+mathjax: 1
+maths: compsci
 ---
 
 I work for a software company that develops productivity applications for financial professionals (bankers, traders,

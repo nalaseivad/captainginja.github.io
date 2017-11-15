@@ -1,0 +1,248 @@
+---
+layout: post
+title: "On How I Learned to Stop Worrying and Love the RDBMS"
+featured_image: /images/dr_strangelove.gif
+featured_image_alt_text: "Dr. Strangelove"
+featured_image_title: >
+  What?!  You haven't seen Dr. Strangelove?  How old are you?  Next you'll be telling me that you haven't seen The
+  Adventures of Buckaroo Banzai Across the 8th Dimension either.  You haven't?  What is the world coming to?
+featured_image_width: 500px
+featured_image_link: https://www.youtube.com/watch?v=RdanCNK4ayo
+tags: [sql, foo]
+mathjax: 1
+---
+
+I've been working with relational database technologies on and off for a big part of my tech career but over the last
+few years I've had the fortune (some may say the misfortune ...) to be able to use a few of them in some depth.  I'm
+currently involved in a heavy evaluation of RDBMS products (including Oracle, DB2, SQL Server, PostgreSQL and
+MySQL/MariaDB) as part of a standardization initiative, and I'm getting to learn a lot about all of them (their
+differences, commonalities and nuances).  However, as of this writing, the one that I know best is Microsoft SQL Server
+(MS SQL).
+
+# Cognitive Friction
+
+One thing that I've noticed as I've got up the learning curve with MS SQL, and helped others get up that same curve, is
+that there are some cognitive frustrations that experienced developers inevitably suffer when they first start working
+with SQL and relational engines.  Developers naturally want to control the algorithm that is used to access data and
+perform a calculation, but that's precisely what you DO NOT do when you write a SQL query.  SQL is a declarative
+language, as opposed to an imperative one, and it's the query optimizer in the RDBMS that actually "writes" the code to
+really execute the query.  I have spent many an hour staring at execution plans and thinking to myself "Why is the
+fracking optimizer choosing to do it that way as opposed to the way that I want it to be done?".  There comes a point
+where you just have to let go and trust that the optimizer knows what it's doing.  This is when you also start to
+develop an appreciation of the difference between a good cost-based optimizer and a poor one.  You also appreciate the
+critical importance of creating the appropriate constructs in your database (e.g. indexes, foreign keys, up-to-date
+statistics) to give the optimizer as much information as you can on which to base its decisions.
+
+# Transactions and the ACID Properties
+
+Another cognitive hurdle is that of concurrency.  An RDBMS is generally a multi-user system and has to manage and
+coordinate access to data across multiple client connection at varying granularities.  It's all part and parcel of
+ensuring that the database engine can support its ACID promise.  Remember that one?  **A**tomicity, **C**onsistency,
+**I**solation and **D**urability.
+
+At the heart of this is the concept of a [transaction](http://en.wikipedia.org/wiki/Database_transaction).  As
+Wikipedia says so well, a transaction symbolizes a unit of work performed within a database management system (DBMS)
+against a database, and treated in a coherent and reliable way independent of other transactions.  They provide an
+"all-or-nothing" proposition, stating that each work-unit must either complete in its entirety or have no effect
+whatsoever.  Further, the system must isolate each transaction from other transactions, results must conform to existing
+constraints in the database and transactions that complete successfully must get written to durable storage.
+Transactions are one of the key mechanisms through which a DBMS ensures that it meets its ACID contract.  And speaking
+of that contract ...
+
+## Atomicity
+
+The atomicity property requires that each transaction be "all-or-nothing"; if one part of the transaction fails, the
+entire transaction fails, and the database state is left unchanged.  An atomic system must guarantee atomicity in each
+and every situation including power failures, errors and crashes.  To the outside world, a committed transaction appears
+(by its effects on the database) to be indivisible ("atomic") and an aborted transaction does not happen.
+
+## Consistency
+
+The consistency property ensures that any transaction will bring the database from one valid state to another.  Any data
+written to the database must be valid according to all defined rules, including constraints, cascades, triggers and any
+combination thereof.  This does not guarantee correctness of the transaction in all ways the application programmer
+might have wanted (that is the responsibility of application-level code) but merely that any programming errors cannot
+result in the violation of any defined rules in the database.
+
+## Isolation
+
+The isolation property ensures that the concurrent execution of transactions results in a system state that would be
+obtained if transactions were executed serially, i.e. one after the other.  Providing isolation is the main goal of
+concurrency control. More on this below.
+
+## Durability
+
+The durability property requires that once a transaction has been committed, it will remain so, even in the event of
+power loss, crashes or errors.  To defend against power loss, transactions (or their effects) must be recorded in
+non-volatile memory.
+
+# Cognitive Friction Revisited
+
+*"So that's all fine and dandy Alan, thanks for the background, but what has that got to do with this other cognitive
+hurdle that you say developers have to get over?  What's the thing that they need to let go of?" - Ed.*
+
+Why, I'm glad you asked.  It's locking, or rather their control (or lack of control) over it.  Any developer with
+experience of multi-threaded programming will look at an RDBMS and automatically think that data will need to be locked
+to ensure transaction isolation.  However they will quickly realize that they never explicitly issue locks on things
+themselves.  As with writing the actual query execution plan, this is the job of the database engine as opposed to the
+job of the database developer.  This lack of direct control can freak out many an individual, especially when they see
+queries blocking each other and potentially even getting into deadlocks.  Just recently I saw one, very experienced,
+C++ developer throw his hands up and claim that a database was "broken" because it was experiencing frequent query
+deadlocks.  He wanted to "take control" of its locking but could not.  It was not until I helped him to debug why his
+queries were deadlocking, and educated him about transaction isolation levels (see below), that he finally calmed down.
+
+This is another example of the need to "let go" and trust that the database engine will ultimately do the right thing,
+as long as you embrace declarative programming and specify the sort of isolation level that you require for a given
+query.  That's the real trick; knowing that you can control the required isolation level for a transaction, or set of
+transactions, and understanding what those isolation levels mean.  It's more declarative programming again.
+
+#Transaction Isolation Levels
+
+MS SQL supports four transaction isolation levels by default with a fifth one (Snapshot) being available if a
+database-level setting is on.  There's also another database-level setting that controls the behavior of the Read
+Committed transaction isolation level.  More on this in due course.  Full details of the available levels can be found
+on [MSDN](https://msdn.microsoft.com/en-us/library/ms173763(v=sql.110).aspx) but a quick description follows.
+
+## Read Uncommitted
+
+Transactions running at this level can read rows that have been modified by other transactions but not yet committed.
+They also do not issue shared locks to prevent other transactions from modifying data read by the current transaction.
+Such transactions are also not blocked by exclusive locks that would prevent the current transaction from reading rows
+that have been modified but not committed by other transactions.  When this option is set, it is possible to read
+uncommitted modifications (you can get "dirty reads").  Values in the data can be changed and rows can appear or
+disappear in the data set before the end of the transaction.
+
+This is the least restrictive of the isolation levels and is not typically used unless application developers
+specifically do not need consistency in their data model.
+
+## Read Committed
+
+Transactions running at this level cannot read data that has been modified but not committed by other transactions, thus
+preventing "dirty reads".  However, data can be changed by other transactions between individual statements within the
+current transaction, resulting in non-repeatable reads (a row returned from a previous query has a different value when
+queried again) or phantom data (different rows come back from a repeat evaluation of the same query).
+
+This is the default transaction isolation level.  Unless a different level is specified (via the *SET TRANSACTION
+ISOLATION LEVEL* command) then this is the level that will be used.  The mechanism by which MS SQL achieves the semantics
+of this isolation level depends on the value of the database-level setting *READ_COMMITTED_SNAPSHOT*.  If that setting is
+off (the default) then the semantics are implemented via locking (reads will take out shared locks on objects and will
+block writers but not other readers).  However, if the setting is on then MS SQL will use a row versioning scheme in
+order to allow transactions to see a snapshot of the state of committed data as of the start of each statement.  Shared
+locks will no longer be taken by read statements in the transaction and so other transactions, that need exclusive
+locks, will not be blocked and their modifications will be accommodated via the row versioning scheme.
+
+Note that the life of the data snapshot is just for the statement.  The next statement in a multi-statement transaction
+will see a new snapshot (as of the start of that statement), and so data committed by other transactions will be visible
+within the current transaction. Non-repeatable reads and phantom data are still possible.
+
+## Repeatable Read
+
+Transactions running at this level cannot read data that has been modified but not yet committed by other transactions;
+and also, no other transactions can modify data that has been read by the current transaction until the current
+transaction completes.  This is achieved via locking.  Shared locks are placed on all data read by each statement in the
+transaction and are held until the transaction completes.  This prevents other transactions from modifying any rows that
+have been read by the current transaction.
+
+Note that although other transactions can't modify (update or delete) rows that match the search conditions of
+statements issued by the current transaction (i.e. the non-repeatable reads problem is avoided), they can insert new
+rows that would match those search conditions.  This means that phantom data is still possible if the current
+transaction were to re-run statements.
+
+Because shared locks are held to the end of a transaction instead of being released at the end of each statement,
+concurrency is lower than the default *READ COMMITTED* isolation level.  It's a trade off.  If you need the data
+isolation guarantees of this level then you have to use it, but there will be more blocking of other transactions.
+
+## Serializable
+
+In transactions running at this level: statements cannot read data that has been modified but not yet committed by other
+transactions, no other transactions can modify data that has been read by the current transaction until the current
+transaction completes, and other transactions cannot insert new rows with key values that would fall in the range of
+keys read by any statements in the current transaction; until the current transaction completes.
+
+This is achieved via yet more aggressive locking. Range locks are placed on the range of key values that match the
+search conditions of each statement executed in the transaction. This blocks other transactions from updating or
+inserting any rows that would qualify for any of the statements executed by the current transaction.  Thus if any of the
+statements in a transaction are executed a second time, they will read the same set of rows.
+
+This is the most restrictive of the isolation levels because it locks entire ranges of keys and holds the locks until
+the transaction completes.  Again, it's a trade off.  Transaction concurrency is lowest when this level is in use but
+sometimes you just need the isolation guarantees.
+
+## Snapshot
+
+As mentioned above, this level is not available by default but is enabled via a database-level setting
+(*ALLOW_SNAPSHOT_ISOLATION*).  Similar to the implementation strategy for the *READ COMMITTED* isolation level (when the
+database-level *READ_COMMITTED_SNAPSHOT* setting is on), MS SQL uses row versioning to facilitate snapshots of committed
+data and avoid shared locks.  Different semantics to *READ COMMITTED* are provided though.
+
+Any statement in a transaction running at this level will read the state of committed data that existed at the start of
+the transaction.  Data modifications made by other transactions after the start of the current transaction are not
+visible to any statements executing in the current transaction.  So effectively, the data snapshot lives for the life of
+the transaction as opposed to just one statement. Note however that the transaction can view changes made by itself.
+For example, if the transaction performs an UPDATE on a table and then issues a *SELECT* statement against the same
+table, the modified data will be visible.
+
+Reads will not take out shared locks (as with the *READ COMMITTED* level when the *READ_COMMITTED_SNAPSHOT* setting is
+on) and so other transactions that want to write data will not be blocked.  Also though, transactions writing data do
+not block other *SNAPSHOT* level transactions from reading data.
+
+# Snapshot Disambiguation
+
+One of the things that I see people confusing a lot when they start using MS SQL is the difference between the
+*READ_COMMITTED_SNAPSHOT* setting and the *SNAPSHOT* transaction isolation level.  People tend to think that
+*READ_COMMITTED_SNAPSHOT* is, itself, another transaction isolation level just like *SNAPSHOT*.  It is not.  It is a
+database setting that "changes the implementation strategy" of the existing *READ COMMITTED* transaction isolation
+level.  If someone says that they are running a transaction as *READ_COMMITTED_SNAPSHOT* or using the
+*READ_COMMITTED_SNAPSHOT* isolation level then that is wrong, and the speaker should be corrected.
+
+Executing a transaction under the *READ COMMITTED* isolation level is a statement (this is declarative programming
+remember) of the sort of isolation that you require for your transaction.  The semantics of that isolation are as
+described above.  By default MS SQL will achieve these semantics via the use of shared locks on the objects that each
+statement in your transaction is reading; and those shared locks will cause other transactions that want to write to the
+same object, to block since they will request exclusive locks on those objects.  However, if the database-level
+*READ_COMMITTED_SNAPSHOT* setting is on, then MS SQL will achieve the required semantics via row-versioning and no
+shared locks will be taken.  This will result in no contention with transactions that need to write data and is
+generally considered a GoodThing&trade;.
+
+Turning on the *READ_COMMITTED_SNAPSHOT* database-level setting is a significant step.  It will cause MS SQL to
+physically change the way that it stores data pages on disk, since it will now store "versions" of rows.  Additional
+information has to be added to every row that is written to a data page under a row-versioned scheme and the old
+versions of the rows will be stored in tempdb as opposed to the regular data pages.  Your database will grow in size and
+will be more reliant on tempdb.  The degree to which this is the case will depend on the pattern of access from your
+clients.
+
+Turning on this setting can, in some edge cases, lead to a change in the behavior of transactions running under the
+*READ COMMITTED* isolation level.  An example of such an edge case can be found
+[here]({{ site.baseurl }}{% post_url 2015-03-19-read-committed-snapshot-possible-behavior-changes %}).  Now, there's
+nothing wrong with turning on *READ_COMMITTED_SNAPSHOT*, in fact I think that it should typically be used.  There's no
+risk of inconsistent behavior among running transactions when it is on, but there is a risk of a behavior change from
+when it is on to when it is off, or vice versa.  If you determine that your database would benefit from row-versioning
+for the *READ COMMITTED* isolation level then turn it on early in the life of the database and then leave it on.  If
+your database has been in place for years, and many client applications may have queries in place that use
+*READ COMMITTED* (which they will since it's the default) then be careful since there is a risk, however small, that
+those clients will see a behavior change.
+
+# Optimism in Locking
+
+We have been talking about row-versioning for a bit but let's come back to locking.  Locking is essential in order for
+an RDBMS to support a transaction's requested isolation semantics when writes are involved, but that locking can either
+be done in a pessimistic or an optimistic way.
+
+Under a "Pessimistic Locking" scheme an object (row, page, table, ...) is locked immediately when a write lock is
+requested, while in an "Optimistic Locking" scheme it is only locked when the changes made to that record are updated.
+With pessimistic locking a write transaction will always succeed but under optimistic locking there's a chance that
+another transaction might have written to the record first.  When the first transaction then tries to commit it's change
+MS SQL will detect the data inconsistency and cause the transaction to fail.
+
+So, optimistic locking leads to the potential for write transactions to fail, and client applications will need to catch
+such failures and re-try, where it's likely that the write will then succeed.  Optimistic locking will provide for less
+blocking between transactions though and thus will allow client load against the database to scale better.  It's a trade
+off.  I like to think that it's one that is well worth it though, as long as you can coordinate the necessary logic
+changes with client applications.  As with the *READ_COMMITTED_SNAPSHOT* option above, if you plan to use *SNAPSHOT*
+isolation early in the life of a database, before client applications become accustomed to the behavior, then it's
+easier to deploy.
+
+You can read up on all the nuances of how to enable the *READ_COMMITTED_SNAPSHOT* and *ALLOW_SNAPSHOT_ISOLATION*
+settings [here](https://technet.microsoft.com/en-us/library/ms175095%28v=sql.105%29.aspx).
+
+![SQL Injection](/images/sql_injection.png)
