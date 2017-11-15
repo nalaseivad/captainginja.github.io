@@ -49,6 +49,10 @@ General styles
   grid-column: 1;
 }
 
+.masthead .site-title a:hover {
+  text-decoration: none;
+}
+
 .masthead .site-description {
   font-size: 1em;
   font-weight: 400;
@@ -62,6 +66,10 @@ General styles
 
 .masthead a {
   text-decoration: none;
+}
+
+.masthead a:hover {
+  text-decoration: underline;
 }
 
 .masthead li {
@@ -95,6 +103,10 @@ General styles
 
 .footer a {
   text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
 }
 
 .footer aside ul {
