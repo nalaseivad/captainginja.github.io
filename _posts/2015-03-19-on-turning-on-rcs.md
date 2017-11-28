@@ -1,6 +1,7 @@
 ---
 layout: post
-title: "READ_COMMITTED_SNAPSHOT - Possible behavior changes"
+title: "On Turning on RCS"
+sub_title: "Turning on Read Committed Snapshot might change behavior"
 featured_image: /images/behavior_change.jpg
 featured_image_alt_text: "Behavior Change"
 featured_image_title: "What do you mean it changed?  That's not a bug, it's a feature!"
@@ -12,19 +13,17 @@ tags: sql
 This is the second in a series of posts on Microsoft SQL Server.  If you are the sort of person who doesn't care about
 context and the logical flow of information then please, feel free to read on.  However, I do suggest that you start
 your stroll through my mumblings on this subject at the
-[beginning]({{ site.baseurl }}{% post_url 2015-03-19-on-how-i-learned-to-stop-worrying-and-love-the-rdbms %}).  It's
-your choice though.
+[beginning]({{ site.baseurl }}{% post_url 2015-03-19-on-rdbms %}).  It's your choice though.
 
-# READ_COMMITTED_SNAPSHOT
+# Read Committed Snapshot
 
 Microsoft SQL Server offers a database-level setting called *READ_COMMITTED_SNAPSHOT* that controls whether data
-snapshots are used for transactions that run under the Read Committed isolation level.  For a primer on the whole notion
-of transactions, isolation levels and the nature of this setting I direct your attention to the
-[first]({{ site.baseurl }}{% post_url 2015-03-19-on-how-i-learned-to-stop-worrying-and-love-the-rdbms %}) in this series
-of posts.  As mentioned in that previous article, turning on this setting can, in some edge cases, lead to a change in
-the behavior of transactions running under the *READ COMMITTED* isolation level.  This is an edge case but it's an
-instructive one to explore since it will give us a greater understanding of the nuance of row-versioning and
-snapshotting in the process.
+snapshots are used for transactions that run under the Read Committed isolation level.  For a primer on the whole
+notion of transactions, isolation levels and the nature of this setting I direct your attention to the
+[first]({{ site.baseurl }}{% post_url 2015-03-19-on-rdbms %}) in this series of posts.  As mentioned in that previous
+article, turning on this setting can, in some edge cases, lead to a change in the behavior of transactions running
+under the *READ COMMITTED* isolation level.  This is an edge case but it's an instructive one to explore since it will
+give us a greater understanding of the nuance of row-versioning and snapshotting in the process.
 
 Before we proceed I want to emphasise that running a database with the *READ_COMMITTED_SNAPSHOT* setting on is not a bad
 thing by any stretch of the imagination.  In fact it's a great feature to enable and will minimize contention in a
