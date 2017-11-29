@@ -55,7 +55,8 @@ $$R_{baseB} = \sum_{i=+\infty}^{-\infty}{d_iB^i}$$
 
 For example, using base 8:
 
-$$123.45_{base10} = (1 \times 8^2) + (7 \times 8^1) + (3 \times 8^0) + (3 \times 8^{-1}) + (4 \times 8^{-2}) + (6 \times 8^{-3}) + (3 \times 8^{-4}) + (1 \times 8^{-5}) + ...$$
+$$123.45_{base10} = (1 \times 8^2) + (7 \times 8^1) + (3 \times 8^0) + (3 \times 8^{-1}) + (4 \times 8^{-2}) +
+(6 \times 8^{-3}) + (3 \times 8^{-4}) + (1 \times 8^{-5}) + ...$$
 
 $$123.45_{base10} = 173.34631..._{base8}$$
 
@@ -122,17 +123,24 @@ There's an initial sign bit, followed by 8 bits in which the exponent value (e) 
 bias of 127), followed by 23 bits in which the digits of the normalized mantissa are represented with an implicit
 leading 1 digit (i.e. \\(1.b_{22}b_{21}b_{20}...b_0\\)).  The represented value is given by:
 
-$$value = (-1)^{sign} \times (1 + \sum_{i=1}^{23}{b_{23-i}2^{-i}}) \times 2^{e-127}$$
+$$value = (-1)^{s} \times (1 + m) \times 2^e$$
+
+where \\( e = e_{biased} - 127 \\), \\( e_{biased} = \sum_{i=23}^{30}{b_i2^{i-23}} \\) and
+\\(m = \sum_{i=22}^{0}{b_i}2^{i-23}\\).
 
 In the above example:
 
 $$sign = 0$$
 
-$$1 + \sum_{i=1}^{23}{b_{23-i}2^{-i}} = 1 + 2^{-2} = 1.25$$
+$$m = \sum_{i=22}^{0}{b_i2^{i-23}} = 2^{-2} = 0.25$$
 
-$$2^{e-127} = 2^{-3}$$
+$$e_{biased} = \sum_{i=23}^{30}{b_i2^{i-23}} = 2^2 + 2^3 + 2^4 + 2^5 + 2^6 = 124$$
 
-$$value = 1.25 \times 2^{-3} = 0.15625$$
+$$e = -3$$
+
+$$2^e = 2^{-3}$$
+
+$$value = (-1)^0 \times (1 + 0.25) \times 2^{-3} = 0.15625$$
 
 Double precision values use 11 bits to store the exponent and 52 bits to store the mantissa.
 
