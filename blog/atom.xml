@@ -5,8 +5,8 @@ layout: default
 <feed xmlns="http://www.w3.org/2005/Atom">
 
 	<title>Das Miscellany</title>
-	<link href="http://alandavies.org/blog/atom.xml" rel="self"/>
-	<link href="http://alandavies.org/blog"/>
+	<link href="http://alandavies.org/blog/atom.xml" rel="self"></link>
+	<link href="http://alandavies.org/blog"></link>
 	<updated>{{ site.time | date_to_xmlschema }}</updated>
 	<id>http://alandavies.org/blog</id>
 	<author>
