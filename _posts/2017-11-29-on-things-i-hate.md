@@ -10,4 +10,8 @@ featured_image_width: 450
 featured_image_link: https://www.youtube.com/watch?v=byEGjLU2egA
 ---
 
-"Vandalism is bad m'kay"
+"Not that I condone vandalism, or any -ism for that matter.  -Ism's in my opinion are not good.  A person should not
+believe in an -ism, he should believe in himself.  I quote John Lennon, 'I don't believe in Beatles, I just believe in
+me.'  Good point there.  After all, he was the walrus.  I could be the walrus.  I'd still have to bum rides off people."
+
+[Anonymous](https://www.youtube.com/watch?v=0KFVLWX7eEY)

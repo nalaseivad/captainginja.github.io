@@ -10,8 +10,8 @@ mathjax: 1
 ---
 
 I recently got hold of a copy of a very interesting [book](https://www.amazon.com/dp/1539692876/) all about the
-development of the early PC game Wolfenstein 3D.  Rather than being a history of ID Sofware and the team that went on to
-develop the seminal games Doom and Quake (for which see [here](https://www.amazon.com/dp/0812972155)), it's more of a
+development of the early PC game Wolfenstein 3D.  Rather than being a history of ID Sofware, and the team that went on
+to develop the seminal games Doom and Quake (for which see [here](https://www.amazon.com/dp/0812972155)), it's more of a
 review of the Wolfenstein 3D codebase (which is open source and available on
 [GitHub](https://github.com/id-Software/wolf3d)) and a presentation of the challenges that were overcome in developing
 a groundbreaking 3D game for the PC with typical specs as of the time:
@@ -46,13 +46,14 @@ The traditional description of floating point representation involves the presen
 
 $$value = (-1)^{s} \times (1 + m) \times 2^e$$
 
-where \\( e = e_{biased} - 127 \\), \\( e_{biased} = \sum_{i=23}^{30}{b_i2^{i-23}} \\) and
+where \\( s = b_{31} \\), \\( e = e_{biased} - 127 \\), \\( e_{biased} = \sum_{i=23}^{30}{b_i2^{i-23}} \\) and
 \\(m = \sum_{i=22}^{0}{b_i}2^{i-23}\\).
 
 It then proceeds to inform you that one bit of memory is used to indicate the sign of the number (the value \\(s\\) in
-the expression where 0 indicates positive and 1 indicates negative), eight are used to represent the biased exponent
+the expression, where 0 indicates positive and 1 indicates negative), eight are used to represent the biased exponent
 (the value \\(e_{biased}\\)) and 23 are used to store the digits of what is known as the mantissa where there is an
-assumed leading 1 bit and the stored bits are assumed to be the part to the right of the decimal point.  These are bits
+assumed leading 1 bit and the stored bits are assumed to be the part to the right of the decimal point, in so far as
+there can be considered to be a decimal point in a binary number.  These are bits
 \\(b_i\\) for \\(i\\) in \\([22, 0]\\).
 
 # The Alternative View
@@ -64,9 +65,9 @@ given real number \\(R\\) as follows ...
   positive will be stored as \\(0\\) and negative will be stored as \\(1\\)
 * Then we determine which two consecutive powers of \\(2\\) bound \\(|R|\\) (the absolute value of \\(R\\)) above and
   below.  Let's denote these two values as \\(2^e\\) and \\(2^{e+1}\\).
-* Next we divide the difference between \\(2^e\\) and \\(2^{e+1}\\) into \\(N\\) equal parts and find the number \\(m\\)
-  such that \\(2^e + \frac{m}{N} <= |R| < 2^e + \frac{m + 1}{N}\\)
-* The floating point approximation to \\(R\\) is parameterized by the values \\(s\\), \\(e\\), \\(N\\) and \\(m\\)
+* Next we divide the difference between \\(2^e\\) and \\(2^{e+1}\\) into \\(N\\) equal parts and find the number \\(n\\)
+  such that \\(2^e + \frac{n}{N} <= |R| < 2^e + \frac{n + 1}{N}\\)
+* The floating point approximation to \\(R\\) is parameterized by the values \\(s\\), \\(e\\), \\(N\\) and \\(n\\)
 
 So we basically map out a comb of \\(N\\) discrete values between each two consecutive powers of \\(2\\) (within a range
 of such powers, \\(2^{e_{min}}\\) and \\(2^{e_{max}}\\)) and approximate \\(|R|\\) as the closest tooth of the comb
@@ -119,10 +120,10 @@ consecutive powers of two is quantized into \\(8{,}388{,}608\\) parts.
 
 Finally we need to think about the range of possible values for the first power in the pair of consecutive powers of
 \\(2\\).  We referred to this before as \\([2^{e_{min}}\\), \\(2^{e_{max}}]\\).  In a 32 bit float, 8 bits are used to
-store a biased exponent which can take any value from the range \(([0, 255]\\)).  This is a biased exponent and the
+store a biased exponent which can take any value from the range \\([0, 255]\\).  This is a biased exponent and the
 actual exponent (in the sum interpretation of float) is equal to \\(\texttt{stored\_exponent} - 127\\).  Thus the actual
 exponent can take any value in the range \\([-127, 128]\\).  Therefore our pair of consecutive powers of \\(2\\) can be
-anything from \\([2^{-128}, 2^{-127}]\\) to \\([2^{127}, 2^{128}]\\).
+anything from \\([2^{-127}, 2^{-126}]\\) to \\([2^{128}, 2^{129}]\\).
 
 Remember the traditional view ...
 
@@ -158,7 +159,7 @@ start of the range.  This means that the absolute size of each bin (our quantum 
 that we are representing.  It also means that the relative size of each bin, relative to the starting value of the range
 remains the same for all ranges though.  We can see this in the following image ...
 
-![](/images/floating_point_chart.png)
+![](/images/floating_point_range_quantization.png)
 
 Here we are breaking each range into \\(16\\) bins.  Each range is progressively wider but the number of bins remains the
 same.  Each bin between \\(1\\) and \\(2\\) is wider than each bin between \\(\frac{1}{8}\\) and \\(\frac{1}{4}\\).
@@ -166,9 +167,9 @@ same.  Each bin between \\(1\\) and \\(2\\) is wider than each bin between \\(\f
 # Special Values
 
 Floating point uses a few special values.  These are \\(0\\), \\(\texttt{Infinity}\\), \\(\texttt{NaN}\\) (short for Not
-Not a Number) and Denormalized Numbers; and there are actually two kinds of \\(\texttt{NaN}\\) value: Signalling and
-Quiet.  More on the difference between Signalling and Quiet in a moment.  For now let's look at the representation of
-these values.
+a Number) and Denormalized Numbers; and there are actually two kinds of \\(\texttt{NaN}\\) value: Signalling and Quiet.
+More on the difference between Signalling and Quiet in a moment.  For now let's look at the representation of these
+values.
 
 \\(0\\) is indicated by \\(e_{biased} = 0\\) and \\(m = 0\\).  This leaves two possibilities for the sign bit and so
 there are actually two values \\(+0\\) and \\(-0\\). 
@@ -212,7 +213,7 @@ $$ value = (-1)^{s} \times (\frac{n}{N}) $$
 
 $$ value = (-1)^{s} \times (2^e + \frac{n}{N}) $$
 
-# One Final Picture
+# One Final Picture or two, or three ...
 
 To close let's imagine a hypothetical one byte floating point format with 1 bit for the sign, 3 bits for the biased
 exponent and 4 bits for the mantissa.  In this format, \\(e_{biased}\\) can range from \\(0\\) to \\(7\\) and \\(m\\)
