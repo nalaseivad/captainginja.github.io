@@ -2,9 +2,9 @@
 layout: site
 ---
 
-{% if page.mathjax == 1 %}
-  {% include mathjax.html %}
-{% endif %}
+{% if page.mathjax == 1 %}{% include mathjax.html %}{% endif %}
+{% if page.math == 1 %}{% include math.html %}{% endif %}
+{% if page.function_plot == 1 %}{% include function_plot.html %}{% endif %}
 
 <div class="post-header">
   <h1 class="title">{{ page.title }}</h1>

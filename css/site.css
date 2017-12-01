@@ -129,17 +129,20 @@ img {
 }
 
 .post-header .title {
+  color: rgb(121, 9, 9);
   margin-top: 0.5em;
   font-size: 2.5em;
 }
 
 .post-header .sub-title {
+  color: rgb(116, 109, 108);
   font-size: 1em;
   text-decoration: none;
   border: none;
 }
 
 .post-header .date {
+  color: rgb(116, 109, 108);
   font-size: .75em;
   text-decoration: none;
   border: none;
