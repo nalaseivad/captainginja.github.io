@@ -235,3 +235,13 @@ showing the values of our representation near \\(0\\) with and without denormali
 ![](/images/floating_point_chart.png)
 
 Much [smoother](https://www.youtube.com/watch?v=5MvVot5RKHI&t=44).
+
+# Other Resources
+
+Lots of people have written about floating point online.  I have no illusions that my witterings are especially
+insightful or worthy.  I have cribbed much of my knowledge from other places on the web actually.  Here are some links
+to such resources.  Go read more on the subject.
+
+* <https://randomascii.wordpress.com/category/floating-point/>
+* <http://floating-point-gui.de/errors/comparison/>
+* <http://realtimecollisiondetection.net/blog/?p=89>
