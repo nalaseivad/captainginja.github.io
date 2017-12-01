@@ -154,6 +154,18 @@ img {
   margin-left: 2em;
 }
 
+.post-body h1 {
+  font-size: 1.5em;
+}
+
+.post-body h2 {
+  font-size: 1.25em;
+}
+
+.post-body h3 {
+  font-size: 1em;
+}
+
 .featured-image-container {
   display: block;
   margin-left: auto;
