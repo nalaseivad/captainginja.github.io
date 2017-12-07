@@ -99,7 +99,7 @@ A: Drop it in water, if it sinks - girl ant, if it floats - boy ant
 
 ---
 
-I can't stop falling of my bike and hurting myself.  It's a vicious cycle.
+I can't stop falling off my bike and hurting myself.  It's a vicious cycle.
 
 ---
 
