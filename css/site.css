@@ -154,6 +154,11 @@ img {
   margin-left: 2em;
 }
 
+.main-content li {
+  list-style-position: outside;
+  margin-left: 2em;
+}
+
 .post-body h1 {
   font-size: 1.5em;
 }
