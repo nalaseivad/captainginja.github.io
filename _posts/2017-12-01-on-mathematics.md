@@ -10,7 +10,6 @@ featured_image_title: >
 featured_image_width: 550
 featured_image_link: https://en.wikipedia.org/wiki/Euler%27s_identity
 mathjax: 1
-function_plot: 1
 ---
 
 I love mathematics.  It's logical, universal and beautiful.  I loved mathematics as a child and was naturally good at it
@@ -26,11 +25,13 @@ presented with.
 I did have the benefit of having some great, fun math teachers though; in middle school (what, in the UK, we called high
 school - Redmoor High School in [Hinckley](https://www.urbandictionary.com/define.php?term=shit-hole) to be precise)
 and then in high school (sixth form college in the UK, specifically the John Cleveland College, also
-located in the same Leicestershire idyll).  Now I described these teachers as "great" and at the time that's what I
-thought they were.  Looking back now though, with the benefit of hindsight, I can say that they didn't do that great a
-job of preparing me to study mathematics at a higher level (more on this below).  However, they were encouraging and
-they made the subject fun, and that is an essential aspect of mathematical pedagogy; and something that was noticeably
-absent from my experience of university-level teaching.
+located in the same Leicestershire idyll).
+
+Now I described these teachers as "great" and at the time that's what I thought they were.  Looking back now though,
+with the benefit of hindsight, I can say that they didn't do that great a job of preparing me to study mathematics at a
+higher level (more on this below).  However, they were encouraging and they made the subject fun, and that is an
+essential aspect of mathematical pedagogy; and something that was noticeably absent from my experience of
+university-level teaching.
 
 I was streamed ahead in middle school and then again in high school; and for the last two years there I was in a tiny
 class (with only five kids in total if I recall correctly) where everyone was motivated to learn and so the teachers
@@ -93,18 +94,18 @@ area and set exams.  It's your performance in these final exams that ultimately 
 [class of degree](https://en.wikipedia.org/wiki/British_undergraduate_degree_classification).
 Teaching consits of group lectures at the department level augmented by small group
 [tutorials](https://www.greenes.org.uk/our-history/the-history-of-the-tutorial/) (in my case it was two students to one
-tutor) with your local college professors within college.  This all sounds great and it would be if all of the lecturers and tutors were good teachers.  Unfortunately, in my
-experience, and especially in Mathematics, they are often not.
+tutor) with your local college professors within college.  This all sounds great and it would be if all of the lecturers
+and tutors were good teachers.  Unfortunately, in my experience and especially in Mathematics, often they were not.
 
-Another aspect of the teaching of mathematics at the undergraduate level is that it is presented in a fundamentally
-different way than in high school.  A degree of rigor is introduced that represents a step change in the way things are
-taught.  There is much less of a focus on the student developing an intuitive understanding of the concepts and instead
-things are presented in terms of a series of "definition, theorem, proof" cycles.  This was something that I had
-not seen before and was quite hard for me to come to terms with.  This is what I meant when I said that my high school
-teachers didn't prepare me to study mathematics at a higher level.  I learnt from several of my fellow students at
-Oxford that they had been introduced to some degree of rigor, and this style of presentation, in school and it really
-helped them.  I guess that's the difference between a state school in a nondescript provincial town and a fee-paying
-private school.  Sigh.
+An aspect of the teaching of mathematics at the undergraduate level is that it is presented in a fundamentally different
+way than in high school.  A degree of rigor is introduced that represents a step change in the way things are taught.
+There is much less of a focus on the student developing an intuitive understanding of the concepts and instead things
+are presented in terms of a series of "definition, theorem, proof" cycles.  This was something that I had not seen
+before and was quite hard for me to come to terms with.  This is what I meant when I said that my high school teachers
+didn't prepare me to study mathematics at a higher level.  I learnt from several of my fellow students at Oxford that
+they had been introduced to some degree of rigor, and this style of presentation, in school and it really helped them.
+I guess that's the difference between a state school in a nondescript provincial town and a fee-paying private school.
+Sigh.
 
 I stuggled to grasp the new presentation of the subject.  Often the rigor seemed pointless ("But that's just obvious!")
 and othertimes it obfuscated and hid the concept that was being introduced.
@@ -114,39 +115,18 @@ the logical construction of things. At the time though I was frustrated and didn
 getting up the learning curve since my tutors felt unapproachable.  It was yet another factor that tainted my orignal
 love of the subject.
 
-Many years later I read [book](https://www.amazon.com/dp/014014739X) on mathematics written for the layman and I once
-again saw something in it that was beautiful.  I read more and especially read a lot more about the history of
-mathematical discovery and the iconic figures who discovered and developed much of the math that we take for granted
-today.  The historical context was fascinating and the presentation, geared to the non-academic, emphasised the concepts
-and the consequences first and foremost.  I ultimately came to the conclusion that you can't study math in isolation,
-it's too sterile and without meaning.  By taking a leisurely tour through its history and landscape I rediscovered my
-love for it.  I've since been motivated to try to re-learn much of what I was supposed to learn back at university, and
-also I now feel a personal mission to help others to learn math the "right way", so that they can see it and
+I ultimately graduated from Oxford and earned degree in mathematics with a good enough grade (a 2:1).  The competitive
+high school kid I used to be would never have been satisfied with anything less than a first but I wasn't that kid
+anymore.  I just wanted to get on with the next phase of my life and that I did.
+
+Some years later I read a [book](https://www.amazon.com/dp/014014739X) on mathematics written for the layman and I once
+again saw something in it that was beautiful.  I read more, and especially read a lot more about the history of
+mathematical discovery and the iconic figures who developed much of what we take for granted today.  The historical
+context was fascinating and the presentation, geared to the non-academic, emphasised the concepts and the consequences
+first and foremost.  I ultimately came to the conclusion that you can't study math in isolation, it's too sterile and
+without meaning.  By taking a leisurely tour through its history and landscape I rediscovered my love for it.  I've
+since been motivated to try to re-learn much of what I was first exposed to back at university and also I now feel a
+personal mission to help others to learn math the "right way", so that they can see it and
 [grok](https://en.wikipedia.org/wiki/Grok) it while they also learn it properly.
 
-I commit to writing posts about math as I continue my journey through its gentle rolling hills.
-
-
-
-<div id="plot-1" style="margin:auto;width:fit-content"></div>
-
-
-
-<script>
-  functionPlot({
-    target: '#plot-1',
-    title: '',
-    width: 600,
-    height: 300,
-    disableZoom: true,
-    xAxis: {
-      domain: [-6, 6]
-    },
-    data: [{
-      fn: 'sin(x^2)'
-    },
-    {
-      fn: 'sin(x)'
-    }]
-  });
-</script>
+I commit to writing posts about math as I continue my journey of rediscovery through its gentle rolling hills.
