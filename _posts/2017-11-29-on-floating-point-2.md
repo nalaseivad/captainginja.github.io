@@ -52,9 +52,9 @@ where \\( s = b_{31} \\), \\( e = e_{biased} - 127 \\), \\( e_{biased} = \sum_{i
 It then proceeds to inform you that one bit of memory is used to indicate the sign of the number (the value \\(s\\) in
 the expression, where 0 indicates positive and 1 indicates negative), eight are used to represent the biased exponent
 (the value \\(e_{biased}\\)) and 23 are used to store the digits of what is known as the mantissa where there is an
-assumed leading 1 bit and the stored bits are assumed to be the part to the right of the decimal point, in so far as
-there can be considered to be a decimal point in a binary number.  These are bits
-\\(b_i\\) for \\(i\\) in \\([22, 0]\\).
+assumed leading 1 bit and the stored bits are assumed to be the part to the right of the binary point (the equivalent of
+the decimal point in the decimal representation of a real number).  These are bits \\(b_i\\) for \\(i\\) in
+\\([22, 0]\\).
 
 # The Alternative View
 
