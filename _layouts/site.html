@@ -9,6 +9,22 @@
   <!-- link to code syntax highlighting stylesheet -->
   <link rel="stylesheet" type="text/css" href="/css/syntax-github.css">
   
+  {% if page.jquery == 1 %}
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+  {% endif %}
+  
+  {% if page.script_src %}
+  <script src="{{ page.script_src }}"></script>
+  {% endif %}
+
+  {% if page.script_ready_eval_string %}
+  <script>
+    $(document).ready(function() {
+      eval(`{{ page.script_ready_eval_string }}`);
+    });
+  </script>
+  {% endif %}
+
   <!-- make all links open in a new tab unless they explictly specify a target -->
   <base target="_blank">
 </head>

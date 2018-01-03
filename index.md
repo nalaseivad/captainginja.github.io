@@ -1,9 +1,17 @@
 ---
-layout: site
+layout: home
 title: Alan Davies
+#home_image_height: 400
+home_image_width: 400
+home_image_link: https://en.wikipedia.org/wiki/M._C._Escher
+home_image_title: Hyperbolic geometry FTW!
+jquery: 1
+script_src: /js/home.js
+script_ready_eval_string: >
+  Main([ '/images/escher_circle_limit_1.jpg',
+         '/images/escher_circle_limit_3.jpg',
+         '/images/escher_circle_limit_with_butterflies.jpg' ])
 ---
-
-![](/images/escher-circle-limit-iii.jpg)
 
 Welcome to the little corner of the Internet dedicated to the random witterings of one Alan Davies.  Now I have to say
 "one" since it is, of course, statistically likely that there's more than one person named Alan Davies in the world and

@@ -13,6 +13,7 @@ General styles
 .sidebar,
 .twin,
 .footer {
+  position: relative;
   padding-top: 1em;
   padding-bottom: 1em;
   padding-left: 2em;
@@ -171,13 +172,52 @@ img {
   font-size: 1em;
 }
 
-.featured-image-container {
+.featured-image-container,
+.home-image-container {
+  position: relative;
   display: block;
   margin-left: auto;
   margin-right: auto;
+  width: max-content;
 }
 
-.featured-image-container a {
+/* These styles are used in order to do the image transition on the home page.  There are two img elements that we need
+   to have positioned on top of each other and of the same size.  We then load different images in sequence into these
+   elements and toggle the hidden class on them so that one fades in as the other fades out.  See /js/home.js for the
+   JavaScript to implement this.  We need the content that comes after these images to continue to flow though and that
+   was tricky to figure out.  I first tried to have both img elements (see _layouts/home.html) be absolutely positioned
+   but this took them both out of the layount flow.  Absolute position is relative to the parent element, in this case
+   the div with class 'home-image-container'.  I needed to have that element have the same size (height + width) of its
+   children (the two img elements).  Having it have the same width is easy (I just use width: max-content on it) but
+   having it have the same height is not so easy.  In the end I realized that I didn't have to have BOTH the img
+   elements use absolute positioning.  If I left the first one be relative then it would be in the layout flow and the
+   parent ('home-image-container') would automatically have the same size as that child.  Then I could just select the
+   LAST img element and have that be absolutely positioned (relative to the parent) and thus be on top of the other,
+   relatively positioned img.  Voila. :last-of-type is very useful. */
+
+.home-image {
+  position: relative;
+  opacity: 1;
+  transition: opacity 2s linear;
+}
+
+.home-image:last-of-type {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.home-content {
+  position: relative;
+}
+
+.hidden {
+  opacity: 0
+}
+
+.featured-image-container a,
+.home-image-container a
+ {
   display: block;
   margin: auto;
   width: max-content;

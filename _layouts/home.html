@@ -1,0 +1,28 @@
+---
+layout: site
+---
+
+<div class="home-image-container" height="{{ page.home_image_height }}" width="{{ page.home_image_width }}">
+{% if page.home_image_link %}
+  <a href="{{ page.home_image_link }}" class="home-image-link">
+{% endif %}
+  <img src="/images/ffffff-1.png"
+    class="home-image"
+    alt="{{ page.home_image_alt_text }}"
+    title="{{ page.home_image_title }}"
+    height="{{ page.home_image_height }}"
+    width="{{ page.home_image_width }}" />
+  <img src="/images/ffffff-1.png"
+    class="home-image hidden"
+    alt="{{ page.home_image_alt_text }}"
+    title="{{ page.home_image_title }}"
+    height="{{ page.home_image_height }}"
+    width="{{ page.main_image_width }}" />
+{% if page.home_image_link %}
+  </a>
+{% endif %}
+</div>
+
+<div class="home-content">
+  {{ content }}
+</div>
