@@ -5,8 +5,7 @@ sub_title: And my journey from loving math to hating it and back to loving it ag
 featured_image: /images/mathematics_blackboard.jpg
 featured_image_alt_text: "Mathematics Blackboard"
 featured_image_title: >
-  Some of the greatest ideas of all time have come to people during math class ... none of which have anything to do
-  with math
+  Some of the greatest ideas of all time have come to people during math class ... none of which have anything to do with math
 featured_image_width: 550
 featured_image_link: https://en.wikipedia.org/wiki/Euler%27s_identity
 mathjax: 1
