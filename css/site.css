@@ -326,3 +326,7 @@ CSS Grid layout for wider screens, when browser supports grid:
     }
   }
 }
+
+.highlight {
+  font-size: 0.9em;
+}
