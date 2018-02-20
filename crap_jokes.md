@@ -118,11 +118,11 @@ Helen Keller walked into a bar ... and then a table and then a chair.
 
 ---
 
-![](/images/spring_is_just_around_the_corner.png)
+![Spring is just around the corner](/images/spring_is_just_around_the_corner.png)
 
 ---
 
-![](/images/remains_to_be_seen.png)
+![Remains to be seen](/images/remains_to_be_seen.png)
 
 ---
 
@@ -220,7 +220,7 @@ A: The hip replacement guy
 
 ---
 
-![](/images/things_i_hate.jpg)
+![Things I hate](/images/things_i_hate.jpg)
 
 ---
 

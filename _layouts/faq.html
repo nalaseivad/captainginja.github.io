@@ -1,0 +1,31 @@
+---
+layout: site
+---
+
+{% if page.mathjax == 1 %}{% include mathjax.html %}{% endif %}
+{% if page.math == 1 %}{% include math.html %}{% endif %}
+{% if page.function_plot == 1 %}{% include function_plot.html %}{% endif %}
+
+<div class="post-header">
+  <h1 class="title">{{ page.title }}</h1>
+  <h2 class="sub-title">{{ page.sub_title }}</h2>
+</div>
+
+<div class="featured-image-container" width="{{ page.featured_image_width }}">
+{% if page.featured_image_link %}
+  <a href="{{ page.featured_image_link }}" class="featured-image-link"> 
+{% endif %}
+  <img src="{{ page.featured_image }}"
+      class="featured-image"
+      alt="{{ page.featured_image_alt_text }}"
+      title="{{ page.featured_image_title }}"
+      width="{{ page.featured_image_width }}" />
+{% if page.featured_image_link %}
+  </a>
+{% endif %}
+</div>
+
+<div class="post-body">
+  {{ content }}
+</div>
+
