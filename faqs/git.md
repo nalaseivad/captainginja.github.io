@@ -60,3 +60,41 @@ Delete a remote tag
 ``` bash
 git push --delete origin <tag-name>
 ```
+
+# Staging and unstaging files
+
+Stage a file
+
+``` bash
+git add <file-name>
+```
+
+Stage all files
+
+``` bash
+git add --all
+```
+
+Stage new and modified files (not deleted)
+
+``` bash
+git add .
+```
+
+Stage modified and deleted files (not new)
+
+``` bash
+git add -u
+```
+
+Unstage a file
+
+``` bash
+git reset <file-name>
+```
+
+Unstage all currently staged changes
+
+``` bash
+git reset
+```
