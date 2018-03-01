@@ -4,7 +4,7 @@ title: Git
 sub_title: Common commands and how-tos
 faq: true
 ---
-# Tags
+## Tags
 
 Annotated vs lightweight tags
 
@@ -61,7 +61,7 @@ Delete a remote tag
 git push --delete origin <tag-name>
 ```
 
-# Staging and unstaging files
+## Staging and unstaging files
 
 Stage a file
 
@@ -98,3 +98,25 @@ Unstage all currently staged changes
 ``` bash
 git reset
 ```
+
+## Committing
+
+Amend the last commit message
+
+``` bash
+git commit --amend
+```
+
+## Squash commits together
+
+To squash the last n commits into one commit we can use an interactive rebase.  Execute the following command.
+
+``` bash
+git rebase -i HEAD~n
+```
+
+This will then launch an editor instance that contains a list of the last n commits.  We can mark these commits to be
+picked, squashed, edited, etc.  To abort the rebase just close the editor without saving any changes to the file.  To
+proceed with the rebase, mark the first/top commit (the latest one) as 'p' and all the others as 's'.  Then save the
+file and close the editor.  Another editor instance will launch that will allow us to create a new commit message for
+the resulting single commit.  Compose the message, save the file and then close the editor.  Job done.
