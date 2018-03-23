@@ -4,6 +4,7 @@ title: Git
 sub_title: Common commands and how-tos
 faq: true
 ---
+
 ## Tags
 
 Annotated vs lightweight tags
@@ -120,3 +121,91 @@ picked, squashed, edited, etc.  To abort the rebase just close the editor withou
 proceed with the rebase, mark the first/top commit (the latest one) as 'p' and all the others as 's'.  Then save the
 file and close the editor.  Another editor instance will launch that will allow us to create a new commit message for
 the resulting single commit.  Compose the message, save the file and then close the editor.  Job done.
+
+## Stashing
+
+Save the current state of your working directory, and the index, and revert to a clean working directory
+
+``` bash
+git stash
+```
+
+or equivalently ...
+
+``` bash
+git stash push
+```
+
+List all current stashes
+
+``` bash
+git stash list
+```
+
+Apply the latest stashed state back to your working directory but do not remove it from the stash list
+
+``` bash
+git stash apply
+```
+
+Apply the latest stashed state back to your working directory and remove it from the stash list
+
+``` bash
+git stash pop
+```
+
+Clear the stash list
+
+``` bash
+git stash clear
+```
+
+## Branching
+
+Create a branch.  Note that this just creates the branch, it doesn't automatically make if the current branch.
+
+``` bash
+git branch <branch-name>
+```
+
+Switch to a branch
+
+``` bash
+git checkout <branch-name>
+```
+
+Delete a branch
+
+``` bash
+git branch -d <branch-name>
+```
+
+List all branches
+
+``` bash
+git branch --list
+```
+
+or equivalently ...
+
+``` bash
+git branch
+```
+
+List all remote branches
+
+``` bash
+git branch --list -r
+```
+
+or equivalently ...
+
+``` bash
+git branch -r
+```
+
+Delete a remote branch
+
+``` bash
+git branch -d -r <branch-name>
+```
