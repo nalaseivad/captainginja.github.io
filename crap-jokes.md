@@ -361,14 +361,15 @@ cannot put into words."
 ---
 
 ``` text
-My dog used to chase people on a bike.  It got so bad, I had to take his bike away!
+My dog used to chase people on a bike.  It got so bad, I had to take his bike
+away!
 ```
 
 ---
 
 ``` text
-A Mexican magician said that he would vanish after the count of three.  He counted uno, dos and then poof he was gone.
-He disappeared without a trace!
+A Mexican magician said that he would vanish after the count of three.  He
+counted uno, dos and then poof he was gone.  He disappeared without a trace!
 ```
 
 ---
@@ -380,7 +381,8 @@ My grandad has the heart of a lion and a lifetime ban from the zoo.
 ---
 
 ``` text
-Q: What's the difference between a well dressed man on a unicycle and a poorly dressed man on a bike?
+Q: What's the difference between a well dressed man on a unicycle and a poorly
+   dressed man on a bike?
 A: Attire!
 ```
 
