@@ -172,6 +172,16 @@ img {
   font-size: 1em;
 }
 
+.post-body table {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.post-body table tbody {
+  list-style-position: outside;
+  margin-left: 2em;
+}
+
 .featured-image-container,
 .home-image-container {
   position: relative;

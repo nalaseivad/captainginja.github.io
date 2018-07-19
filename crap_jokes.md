@@ -320,3 +320,40 @@ A: Wasabi
 Q: What do you call a man with no shins?
 A: Tony
 ```
+
+---
+
+``` text
+Mon: Greg
+Tue: Ian
+Wed: Greg
+Thu: Ian
+Fri: Greg
+Sat: Ian
+Sun: Greg
+
+#gregorianCalendar
+```
+
+---
+
+``` text
+Mountains aren't funny.  They're hill areas.
+```
+
+---
+
+Not a crap joke this one, just a great joke that references a great comedian ...
+
+``` text
+I used to miss Mitch Hedberg. I still do, but I used to too.﻿
+```
+
+---
+
+Again, not a crap joke; more an intellectual joke.  A whole different category of humor.
+
+``` text
+"People who can't distinguish between etymology and entomology bug me in ways I cannot put into words."
+```
+
