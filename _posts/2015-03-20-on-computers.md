@@ -1,11 +1,13 @@
 ---
 layout: post
-title: "On Computers"
+title: On Computers
+sub_title: A walk down memory lane
 featured_image: /images/zx81_desk_small.jpg
 featured_image_alt_text: "ZX81"
 featured_image_title: "Click to see the future"
 featured_image_width: 450
 featured_image_link: /images/zx81_doorstop.jpg
+tags: [me]
 ---
 
 # My First Computer

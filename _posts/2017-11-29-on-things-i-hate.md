@@ -8,6 +8,7 @@ featured_image_title: >
   I ... hate the rain and sunny weather.  And I ... hate the beach and mountains too.
 featured_image_width: 450
 featured_image_link: https://www.youtube.com/watch?v=byEGjLU2egA
+tags: [jokes]
 ---
 
 "Not that I condone vandalism, or any -ism for that matter.  -Isms in my opinion are not good.  A person should not

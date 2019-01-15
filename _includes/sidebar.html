@@ -1,0 +1,24 @@
+<aside class="sidebar">
+  <h3>Tags</h3>
+
+  <p>
+    {% capture page_tags_size %}{{ page.tags | size }}{% endcapture %}
+    {% for tag in site.tags %}
+      {% capture tag_name %}{{ tag[0] }}{% endcapture %}
+      {% capture tag_count %}{{ tag[1] | size }}{% endcapture %}
+      {% assign relative_font_size_pct = tag_count | minus: 1 | times: 15 | plus: 100 %}
+
+      <!-- {{ tag_name }} -->
+      <!-- {{ tag_count }} -->
+      <!-- {{ relative_font_size_pct }} -->
+
+      {% if page_tags_size == '0' or page.tags contains tag_name %}
+        <!-- Make the size of the word directly proportional to the number of posts with that tag. -->
+        <a href="/tags/{{ tag_name }}" style="font-size: {{ relative_font_size_pct }}%" target="_self">
+          {{ tag[0] }}
+        </a>
+      {% endif %}
+    {% endfor %}
+  </p>
+
+</aside>

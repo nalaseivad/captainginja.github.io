@@ -8,6 +8,7 @@ featured_image_title: >
   The paged linked to here may argue that 'the LEGO Group has no authority over the English language to regulate it in
   this way' but I don't care.  The word Legos is an abomination that must be scoured from the face of the Earth.
 featured_image_link: https://english.stackexchange.com/questions/10839/what-is-the-correct-plural-form-of-lego-lego-or-legos
+tags: [lego]
 ---
 
 For the last time, it's LEGO<sup>&#174;</sup> damnit!  A LEGO<sup>&#174;</sup> set generally contains many

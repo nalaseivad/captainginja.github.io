@@ -7,6 +7,7 @@ featured_image_alt_text: "Floating Point 2"
 featured_image_title: "Holy shit!  2.0 massive, floating, disembodied hands!"
 featured_image_width: 450
 mathjax: 1
+tags: [compsci]
 ---
 
 I recently got hold of a copy of a very interesting [book](https://www.amazon.com/dp/1539692876/) all about the

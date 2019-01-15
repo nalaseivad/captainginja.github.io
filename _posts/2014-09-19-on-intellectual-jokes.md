@@ -1,12 +1,13 @@
 ---
 layout: post
-title: "On Intellectual Jokes"
+title: On Intellectual Jokes
+sub_title: Three logicians walked into a bar ...
 featured_image: /images/venn_diagrams.png
 featured_image_alt_text: "Venn Diagrams"
-featured_image_title: "Did you hear the one about the Nun, the Rabbi and the Venn Diagram?"
+featured_image_title: Did you hear the one about the Nun, the Rabbi and the Venn Diagram?
 featured_image_width: 450
 mathjax: 1
-tags: jokes
+tags: [jokes]
 ---
 
 I saw this old joke again today ...

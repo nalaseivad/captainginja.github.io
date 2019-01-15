@@ -7,6 +7,7 @@ featured_image_alt_text: "On Mac vs PC"
 featured_image_title: "PC: Hey, have you seen Linux?  Mac: I think he's outback rebuilding his kernel."
 featured_image_link: https://www.youtube.com/watch?v=0eEG5LVXdKo
 featured_image_width: 450
+tags: [me]
 ---
 
 I've been a PC person for years.  At work I only ever used (and use) PCs, although I worked with remote VMS (yes,

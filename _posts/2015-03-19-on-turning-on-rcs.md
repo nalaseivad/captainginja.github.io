@@ -7,7 +7,7 @@ featured_image_alt_text: "Behavior Change"
 featured_image_title: "What do you mean it changed?  That's not a bug, it's a feature!"
 featured_image_width: 400px
 featured_image_link: /images/feature_bug.jpg
-tags: sql
+tags: [sql]
 ---
 
 This is the second in a series of posts on Microsoft SQL Server.  If you are the sort of person who doesn't care about

@@ -1,12 +1,15 @@
 ---
 layout: post
-title: "On Floating Point"
+title: On Floating Point
+sub_title: >
+  There are roughly 00111111111111111111111111111111 types of people in the world, those who understand floating point
+  numbers, and those who don’t.
 featured_image: /images/floating_point.png
 featured_image_alt_text: "Floating Point"
-featured_image_title: "Holy shit!  A massive, floating, disembodied hand!"
+featured_image_title: Holy shit!  A massive, floating, disembodied hand!
 featured_image_width: 450
 mathjax: 1
-maths: compsci
+tags: [compsci]
 ---
 
 I work for a software company that develops productivity applications for financial professionals (bankers, traders,

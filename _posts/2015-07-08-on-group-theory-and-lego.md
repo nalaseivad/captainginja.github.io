@@ -1,10 +1,12 @@
 ---
 layout: post
-title: "On Group Theory and LEGO"
+title: On Group Theory and LEGO
+sub_title: Solve that cube!
 featured_image: /images/lego_rubik_cube.png
 featured_image_alt_text: "Cube!"
 featured_image_title: "F, D, F', D', R, F', R', F, ..."
 featured_image_width: 300
+tags: [lego, math]
 ---
 
 Another [video post](https://www.youtube.com/watch?v=OmMuUVCLtkg)!  This time involving a Rubik's Cube and a bunch of

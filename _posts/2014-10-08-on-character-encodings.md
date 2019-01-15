@@ -1,12 +1,13 @@
 ---
 layout: post
 title: "On Character Encodings"
+sub_title: ASCII, multi-byte, Unicode, encoding, lions, tigers and bears ... oh my!
 featured_image: /images/code_points.png
 featured_image_alt_text: "Code Points"
 featured_image_title: "Yay, a snowman!  I'm walking in the air ..."
 featured_image_width: 500px
 mathjax: 1
-tags: compsci
+tags: [compsci]
 ---
 
 In the beginning was the telegraph.  It started with human operators manually sending messages in Morse code but in

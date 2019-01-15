@@ -6,6 +6,7 @@ featured_image: /images/getting_back_on_the_horse.png
 featured_image_alt_text: "Getting back on the horse"
 featured_image_title: "You don't write for a while, blink and then it's been two years ..."
 featured_image_width: 550
+tags: [writing]
 ---
 
 If you don't keep doing something regularly then you will not do it regularly and soon that new habit will add up to

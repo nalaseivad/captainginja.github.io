@@ -2,8 +2,12 @@
 layout: blog
 ---
 
+<div class="tagpage-header">
+  <h1 class="title">{{ page.tag }}</h1>
+</div>
+
 <ul class="blog-post-list">
-  {% for post in site.posts %}
+  {% for post in site.tags[page.tag] %}
   <li class="blog-post-list-item">
     <div class="date">{{ post.date | date_to_string }}</div>
     <div class="featured-image-container" width="100">

@@ -7,6 +7,7 @@ featured_image_alt_text: "Concurrent UPSERTS"
 featured_image_title: "Mmm, donuts!"
 featured_image_width: 580
 featured_image_link: /images/mmm_donuts.jpg
+tags: [sql]
 ---
 
 # Introduction

@@ -1,6 +1,7 @@
 ---
 layout: post
-title: "On Writing"
+title: On Writing
+sub_title: "\"It ain't whatcha write, it's the way atcha write it.\" - Jack Kerouac"
 featured_image: /images/old_typewriter.png
 featured_image_alt_text: "Old typewriter"
 featured_image_title: >
@@ -8,6 +9,7 @@ featured_image_title: >
   amount of time will almost surely type a given text, such as the complete works of William Shakespeare.
 featured_image_link: https://en.wikipedia.org/wiki/Infinite_monkey_theorem
 featured_image_width: 450
+tags: [writing]
 ---
 
 Writing ... a skill that is vastly underappreciated.

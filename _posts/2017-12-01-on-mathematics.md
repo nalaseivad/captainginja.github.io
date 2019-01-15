@@ -9,6 +9,7 @@ featured_image_title: >
 featured_image_width: 550
 featured_image_link: https://en.wikipedia.org/wiki/Euler%27s_identity
 mathjax: 1
+tags: [me, math]
 ---
 
 I love mathematics.  It's logical, universal and beautiful.  I loved mathematics as a child and was naturally good at it

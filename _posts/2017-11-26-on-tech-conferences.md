@@ -8,6 +8,7 @@ featured_image_title: >
   But soft, what rancid flatulence through yonder window breaks.  If it is the east, well then I’m heading west.
 featured_image_width: 450
 featured_image_link: https://www.youtube.com/watch?v=R6dm9rN6oTs&t=22
+tags: [me, sql, conferences]
 ---
 
 For some time now I've wanted to attend a big tech conference.  Part of the motivation was to attend a large event but

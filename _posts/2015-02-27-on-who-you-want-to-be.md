@@ -1,10 +1,12 @@
 ---
 layout: post
-title: "On Who You Want to Be"
+title: On Who You Want to Be
+sub_title: Be like Mike
 featured_image: /images/mike_d.jpg
-featured_image_alt_text: "Mike D"
-featured_image_title: "Just be the ball, be the ball, be the ball ... You're not being the ball Danny."
+featured_image_alt_text: Mike D
+featured_image_title: Just be the ball, be the ball, be the ball ... You're not being the ball Danny.
 featured_image_width: 600
+tags: [thoughtful]
 ---
 
 I recently learned that an old colleague of mine just passed away.  This was sad news and a surprise, even though I knew
