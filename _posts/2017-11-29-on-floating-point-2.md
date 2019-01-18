@@ -24,8 +24,8 @@ A PC of that era had significantly more CPU horsepower (in terms of
 [MIPS](https://en.wikipedia.org/wiki/Instructions_per_second)) than any of the contemporary games consoles and that was
 what made it appealing as a target platform for a 3D game.  The nature of the segmented memory model that DOS imposed
 (as a consequence of being tied to [Real Mode](https://en.wikipedia.org/wiki/Real_mode) on the 386), the architecture of
-the VGA graphics card and the lack of hardware floating point on the 386 presented lots of challenges to the project and
-the strategies that Carmack and co. came up with to make it all work are ingenius and very interesting.  It's a good
+the VGA graphics card and the lack of hardware floating point on the 386 presented lots of challenges to the project,
+and the strategies that Carmack and co. came up with to make it all work are ingenius and very interesting.  It's a good
 read ... for those of a more geeky persuasion anyway.  People like me, and - I suppose - you too dear reader.
 
 All this is very interesting but not really the subject of this blog post.  This post is a follow up to a
