@@ -31,6 +31,10 @@
   </script>
   {% endif %}
 
+  {% if page.style_src %}
+  <link rel="stylesheet" type="text/css" href="{{ page.style_src }}">
+  {% endif %}
+
   <!-- make all links open in a new tab unless they explictly specify a target -->
   <base target="_blank">
 </head>

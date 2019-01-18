@@ -364,7 +364,7 @@ CSS Grid layout for wider screens, when browser supports grid:
     .site {
       display: grid;
       /* grid-template-columns: auto minmax(auto, 50em) minmax(auto, 10em) auto; */
-      grid-template-columns: auto minmax(auto, 60em) auto;
+      grid-template-columns: auto minmax(auto, 65em) auto;
       /* grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; */
       grid-template-rows: 7em auto 2.5em;
       /* grid-template-rows: auto auto auto; */
@@ -399,7 +399,7 @@ CSS Grid layout for wider screens, when browser supports grid:
   @supports (display: grid) {
     .blog-content {
       display: grid;
-      grid-template-columns: minmax(auto, 50em) minmax(auto, 10em);
+      grid-template-columns: minmax(auto, 57em) minmax(auto, 8em);
       grid-template-rows: auto;
     }
 
