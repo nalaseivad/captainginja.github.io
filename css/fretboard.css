@@ -49,6 +49,16 @@
   stroke-width: 0;
 }
 
+.fretboard-container .green .note {
+  fill: rgb(0, 255, 0);
+  stroke-width: 0;
+}
+
+.fretboard-container .orange .note {
+  fill: rgb(255, 127, 0);
+  stroke-width: 0;
+}
+
 .fretboard-container .note-label {
   font-size: 85%;
   fill: rgb(0, 0, 0);
@@ -70,6 +80,18 @@
 .fretboard-container .blue .note-label {
   font-size: 85%;
   fill: rgb(255, 255, 255);
+  stroke-width: 0;
+}
+
+.fretboard-container .green .note-label {
+  font-size: 85%;
+  fill: rgb(0, 0, 0);
+  stroke-width: 0;
+}
+
+.fretboard-container .orange .note-label {
+  font-size: 85%;
+  fill: rgb(0, 0, 0);
   stroke-width: 0;
 }
 
