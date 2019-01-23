@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: page
 title: On guitar
 sub_title: >
   Anger, he smiles, towering in ... shiny metallic purple armor.  Queen Jealousy, envy waits behind him; her fiery green
@@ -16,69 +16,159 @@ script_ready_eval_string: main()
 style_src: /css/fretboard.css
 ---
 
+<div class="fretboard-diagram-container">
+  <div class="fretboard-diagram"
+       width="250"
+       height="180"
+       start-fret="4"
+       num-frets="6"
+       notes="5,5 4,4 4,7 3,5 3,7 2,6 2,9 1,5 1,8 0,5 0,9"
+       highlightNotes="A,red Csharp,green E,blue G,orange"></div>
+  <div class="fretboard-diagram"
+       width="250"
+       height="180"
+       start-fret="4"
+       num-frets="6"
+       notes="5,5 5,8 4,5 3,4 3,7 2,5 2,7 1,7 0,5 0,8"
+       highlightNotes="D,red Fsharp,green A,blue C,orange"></div>
+  <div class="fretboard-diagram"
+       width="250"
+       height="180"
+       start-fret="4"
+       num-frets="6"
+       notes="5,4 5,7 4,5 4,7 3,6 2,4 2,7 1,5 1,9 0,4 0,7"
+       highlightNotes="E,red Gsharp,green B,blue D,orange"></div>
+  <div>&nbsp;</div>
+  <div>&nbsp;</div>
+  <div>&nbsp;</div>
+  <div class="fretboard-diagram"
+       width="250"
+       height="180"
+       start-fret="4"
+       num-frets="6"
+       notes="5,5 5,8 4,5 4,7 3,5 3,7 2,5 2,7 1,5 1,8 0,5 0,8"></div>
+  <div class="fretboard-diagram"
+       width="250"
+       height="180"
+       start-fret="4"
+       num-frets="6"
+       notes="5,5 5,8 4,5 4,7 3,5 3,7 2,5 2,7 1,5 1,8 0,5 0,8"></div>
+  <div class="fretboard-diagram"
+       width="250"
+       height="180"
+       start-fret="4"
+       num-frets="6"
+       notes="5,5 5,8 4,5 4,7 3,5 3,7 2,5 2,7 1,5 1,8 0,5 0,8"></div>
+  <div>&nbsp;</div>
+  <div>&nbsp;</div>
+  <div>&nbsp;</div>
+  <div class="fretboard-diagram"
+       width="250"
+       height="180"
+       start-fret="4"
+       num-frets="6"
+       notes="5,5 5,7 4,4 4,7 3,4 3,7 2,4 2,6 1,5 1,7 0,5 0,7"></div>
+  <div class="fretboard-diagram"
+       width="250"
+       height="180"
+       start-fret="4"
+       num-frets="6"
+       notes="5,5 5,7 4,4 4,7 3,4 3,7 2,4 2,6 1,5 1,7 0,5 0,7"></div>
+  <div class="fretboard-diagram"
+       width="250"
+       height="180"
+       start-fret="4"
+       num-frets="6"
+       notes="5,5 5,7 4,4 4,7 3,4 3,7 2,4 2,6 1,5 1,7 0,5 0,7"></div>
+</div>
+
+# E7 position 1 chord tones
+
+<div class="fretboard-diagram"
+     id="fb-a7-p1"
+     width="300"
+     height="200"
+     start-fret="0"
+     num-frets="7"
+     notes="5,0 5,4 4,2 4,5 3,0 3,2 2,1 2,4 1,0 1,3 1,5 0,0 0,4"
+     highlightNotes="E,red Gsharp,green B,blue D,orange"
+     ></div>
+
 # A7 position 1 chord tones
 
-<div class="fretboard-container"
+<div class="fretboard-diagram"
      id="fb-a7-p1"
      width="800"
      height="200"
+     start-fret="0"
+     num-frets="22"
      notes="5,5 4,4 4,7 3,5 3,7 2,6 2,9 1,5 1,8 0,5 0,9"
      highlightNotes="A,red Csharp,green E,blue G,orange"
      ></div>
 
 # D7 position 1 chord tones
 
-<div class="fretboard-container"
+<div class="fretboard-diagram"
      id="fb-d7-p1"
      width="800"
      height="200"
+     start-fret="0"
+     num-frets="22"
      notes="5,5 5,8 4,5 3,4 3,7 2,5 2,7 1,7 0,5 0,8"
      highlightNotes="D,red Fsharp,green A,blue C,orange"
      ></div>
 
 # E7 position 1 chord tones
 
-<div class="fretboard-container"
+<div class="fretboard-diagram"
      id="fb-e7-p1"
      width="800"
      height="200"
+     start-fret="0"
+     num-frets="22"
      notes="5,4 5,7 4,5 4,7 3,6 2,4 2,7 1,5 1,9 0,4 0,7"
      highlightNotes="E,red Gsharp,green B,blue D,orange"
      ></div>
 
 # A Minor Pentatonic from low E string with position shift
 
-<div class="fretboard-container"
+<div class="fretboard-diagram"
      id="fb1"
      width="800"
      height="200"
+     start-fret="0"
+     num-frets="22"
      notes="5,5 4,3 4,5 4,7 3,5 3,7 2,5 2,7 2,9 1,8 1,10 0,8 0,10 0,12"
      highlightNotes="A,red Csharp,green E,blue G,orange"
      ></div>
 
 # D Minor Pentatonic from A string with position shift
 
-<div class="fretboard-container"
+<div class="fretboard-diagram"
      id="fb2"
      width="800"
      height="200"
+     start-fret="0"
+     num-frets="22"
      notes="4,5 3,3 3,5 3,7 2,5 2,7 1,6 1,8 1,10 0,8 0,10"
      highlightNotes="D,red Fsharp,green A,blue C,orange"
      ></div>
 
 # A Minor Pentatonic (+) position 3/4 on higher strings
 
-<div class="fretboard-container"
+<div class="fretboard-diagram"
      id="fb3"
      width="800"
      height="200"
+     start-fret="0"
+     num-frets="22"
      notes="2,12 2,14 1,10 1,12 1,13 1,14 0,10 0,12 1,12 1,15 0,15 1,17 0,17"
      highlightNotes="A,red Csharp,green E,blue G,orange"
      ></div>
 
 # Dynamic Fretboard
 
-<div class="fretboard-container" id="fb" width="800" height="200" notes="all"></div>
+<div class="fretboard-diagram" id="fb" width="800" height="200" start-fret="0" num-frets="22" notes="all"></div>
 
 # Show/Hide Notes
 

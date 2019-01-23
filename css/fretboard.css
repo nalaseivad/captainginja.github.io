@@ -1,133 +1,106 @@
-.fretboard-container {
+.fretboard-diagram-container {
+  display:grid;
+  grid-template-columns: auto auto auto;
+}
+
+.fretboard-diagram {
   display:flex;
   justify-content: center;
   stroke: rgb(0,0,0);
   stroke-width: 1;
 }
 
-.fretboard-container .nut {
+.fretboard-diagram .nut {
   stroke: rgb(0,0,0);
   stroke-width: 1;
   fill: rgb(252,252,238);
 }
 
-.fretboard-container .fretboard {
+.fretboard-diagram .fretboard {
   fill: rgba(90, 74, 3, 0.753);
 }
 
-.fretboard-container .fret {
+.fretboard-diagram .fret {
   stroke: rgb(192,192,192);
   stroke-width: 3;
 }
 
-.fretboard-container .string {
+.fretboard-diagram .string {
   stroke: rgb(189, 192, 21);
   stroke-width: 2;
 }
 
-.fretboard-container .note-group {
+.fretboard-diagram .note-group {
   stroke-width: 0;
 }
 
-.fretboard-container .note {
+.fretboard-diagram .note {
   fill: rgb(255, 255, 255);
   stroke-width: 0;
 }
 
-.fretboard-container .highlighted .note {
+.fretboard-diagram .highlighted .note {
   fill: rgb(255, 0, 0);
   stroke-width: 0;
 }
 
-.fretboard-container .red .note {
+.fretboard-diagram .red .note {
   fill: rgb(255, 0, 0);
   stroke-width: 0;
 }
 
-.fretboard-container .blue .note {
+.fretboard-diagram .blue .note {
   fill: rgb(0, 0, 255);
   stroke-width: 0;
 }
 
-.fretboard-container .green .note {
+.fretboard-diagram .green .note {
   fill: rgb(0, 255, 0);
   stroke-width: 0;
 }
 
-.fretboard-container .orange .note {
+.fretboard-diagram .orange .note {
   fill: rgb(255, 127, 0);
   stroke-width: 0;
 }
 
-.fretboard-container .note-label {
+.fretboard-diagram .note-label {
   font-size: 85%;
   fill: rgb(0, 0, 0);
   stroke-width: 0;
 }
 
-.fretboard-container .highlighted .note-label {
+.fretboard-diagram .highlighted .note-label {
   font-size: 85%;
   fill: rgb(255, 255, 255);
   stroke-width: 0;
 }
 
-.fretboard-container .red .note-label {
+.fretboard-diagram .red .note-label {
   font-size: 85%;
   fill: rgb(255, 255, 255);
   stroke-width: 0;
 }
 
-.fretboard-container .blue .note-label {
+.fretboard-diagram .blue .note-label {
   font-size: 85%;
   fill: rgb(255, 255, 255);
   stroke-width: 0;
 }
 
-.fretboard-container .green .note-label {
-  font-size: 85%;
-  fill: rgb(0, 0, 0);
-  stroke-width: 0;
-}
-
-.fretboard-container .orange .note-label {
+.fretboard-diagram .green .note-label {
   font-size: 85%;
   fill: rgb(0, 0, 0);
   stroke-width: 0;
 }
 
-.fretboard-container .dot {
+.fretboard-diagram .orange .note-label {
+  font-size: 85%;
   fill: rgb(0, 0, 0);
   stroke-width: 0;
 }
 
-/*
-.fretboard-container .note-A {
-  fill: rgb(212, 22, 22);
+.fretboard-diagram .dot {
+  fill: rgb(0, 0, 0);
   stroke-width: 0;
 }
-
-.fretboard-container .note-label-A {
-  fill: rgb(255, 255, 255);
-  stroke-width: 0;
-}
-
-.fretboard-container .note-Csharp {
-  fill: rgb(218, 112, 13);
-  stroke-width: 0;
-}
-
-.fretboard-container .note-label-Csharp {
-  fill: rgb(255, 255, 255);
-  stroke-width: 0;
-}
-
-.fretboard-container .note-E {
-  fill: rgb(20, 16, 211);
-  stroke-width: 0;
-}
-
-.fretboard-container .note-label-E {
-  fill: rgb(255, 255, 255);
-  stroke-width: 0;
-}
-*/
