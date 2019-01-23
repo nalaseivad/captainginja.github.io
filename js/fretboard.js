@@ -25,13 +25,17 @@ function drawFretboard(fbContainer) {
   var svg = createNode('svg', { x: 0, y: 0, width: fbcWidth, height: fbcHeight });
   fbContainer.append(svg);
 
-  var openNoteLabelWidth = fbcWidth * 0.03;
+  var fbHeight = fbcHeight;
+  var edgeSpace = fbHeight / 15;
+  var noteR = edgeSpace * 0.8;
+  var openNoteLabelWidth = (noteR * 2) * 1.1;
   var nutX = openNoteLabelWidth;
-  var nutWidth = fbcWidth * 0.015;
+  var nutWidth = 8;
   var fbX = (startFret == 0) ? nutWidth + openNoteLabelWidth : 0;
   var fbY = 0;
   var fbWidth = fbcWidth - fbX;
-  var fbHeight = fbcHeight;
+  var fretXDelta = fbWidth / numFrets;
+  
   
   if (startFret == 0) {
     var nut = createNode('rect', { class: 'nut', x: nutX, y: fbY, width: nutWidth, height: fbHeight });
@@ -43,14 +47,12 @@ function drawFretboard(fbContainer) {
 
   var fretX = fbX + (fbWidth / numFrets);
   var fretY = 0;
-  var fretXDelta = fbWidth / numFrets;
   for (n = 0; n < numFrets; ++n) {
     var fret = createNode('line', { class: 'fret', x1: fretX, y1: fretY, x2: fretX, y2: fbcHeight });
     svg.append(fret);
     fretX += fretXDelta;
   }
 
-  var edgeSpace = fbHeight / 15;
   var stringY = edgeSpace;
   var stringYDelta = (fbcHeight - (2 * edgeSpace)) / 5;
   var stringStartX = (startFret == 0) ? nutX : 0;
@@ -62,7 +64,6 @@ function drawFretboard(fbContainer) {
 
   var noteLabels = ['E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B', 'C', 'C#', 'D', 'D#'];
   var noteLabelIndexes = [0, 7, 3, 10, 5, 0];
-  var noteR = edgeSpace * 0.8;
   var noteXDelta = fbWidth / numFrets;
   var noteYDelta = stringYDelta;
 
