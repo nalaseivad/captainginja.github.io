@@ -2,7 +2,7 @@
 layout: post
 title: On Getting Started
 sub_title: "\"You cannot begin, until you begin.\""
-featured_image: /images/the-secret-of-getting-ahead-is-getting-started.png
+featured_image: /images/the_secret_of_getting_ahead_is_getting_started.png
 featured_image_alt_text: The secret of getting ahead is getting started
 featured_image_title: >
   Why Don't You Just Switch Off Your Television Set and Go Out and Do Something Less Boring Instead?
