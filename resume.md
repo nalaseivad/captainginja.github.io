@@ -4,5 +4,9 @@ title: Resume
 permalink: /resume
 ---
 
-This is where my resume will live when I finally get around to publishing it up here.  Don't get impatient now, I've got
-lots of other important things to be doing.
+<object data="/docs/alan_davies_resume.pdf"
+        type="application/pdf"
+				width="800px"
+				height="1100px"
+				style="display:block;margin-left:auto;margin-right:auto">
+</object>
