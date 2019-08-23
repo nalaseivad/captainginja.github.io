@@ -406,3 +406,85 @@ A: Aye matey!
 Q: What do you call someone who points out the obvious?
 A: Someone who points out the obvious.
 ```
+
+---
+
+``` text
+I used to run a dating agency for chickens but I had to shut it down.
+I was struggling to make hens meet.
+```
+
+---
+
+``` text
+I've been learning how to guess the weight of dogs.
+I picked up a few pointers yesterday.
+```
+
+---
+
+``` text
+Irony, the opposite of wrinkly
+```
+
+---
+
+``` text
+If you suck at playing trumpet then that's probably why
+```
+
+---
+
+``` text
+Well, to be Frank I'd have to change my name
+```
+
+---
+
+``` text
+Dogs can't operate MRI scanners but cat scan
+```
+
+---
+
+``` text
+Jim and Bob (two old fellas with Alzheimers) are sitting by the sea.
+Jim turns to the other and says "Get me an ice cream mate."
+"Alright" says Bob and gets up to go.
+"With a flake," says Jim
+"OK"
+Jim taps Bob on the leg; "Oh, and sprinkles."
+"OK"
+Another tap from Jim; "And chocolate sauce!"
+"OK, OK.  I've got it."
+
+Bob goes to get the ice cream.
+After a while he comes back with a steaming dish in a foil tin.
+
+"What's that?" says Jim.
+"It's your steak and kidney pie" replies Bob
+"WTF?!  You forgot my chips!"
+```
+
+---
+
+``` text
+I just found out I'm color blind.
+The diagnosis came completely out of the purple.
+```
+
+---
+
+``` text
+My friend asked me, "What rhymes with orange?"
+So I said, "No it doesn't"
+```
+
+---
+
+``` text
+Two goldfish are in a tank.
+One says to the other, "Do you know how to drive this thing?"
+```
+
+---
