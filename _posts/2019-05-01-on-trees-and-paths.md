@@ -190,7 +190,7 @@ namespace GinjaSoft.TreeStuff
   {
     private static NodeInfo ProcessNode(Node<uint> root, NodeInfo left, NodeInfo right)
     {
-			// Base result for a leaf node
+      // Base result for a leaf node
       var returnValue = new NodeInfo {
         RootValue = root.Value,
         MaxIncPathLenToRoot = 1,
@@ -204,13 +204,13 @@ namespace GinjaSoft.TreeStuff
       // Process children ...
 
       if(left != null) {
-				// Update the min/max PathLenToRoot based on the current root value and left child root value
+        // Update the min/max PathLenToRoot based on the current root value and left child root value
         if(root.Value > left.RootValue) returnValue.MaxIncPathLenToRoot = left.MaxIncPathLenToRoot + 1;
         else if(root.Value < left.RootValue) returnValue.MaxDecPathLenToRoot = left.MaxDecPathLenToRoot + 1;
       }
 
       if(right != null) {
-				// Update the min/max PathLenToRoot based on the current root value and right child root value
+        // Update the min/max PathLenToRoot based on the current root value and right child root value
         if(root.Value > right.RootValue) {
           var pathLen = right.MaxIncPathLenToRoot + 1;
           returnValue.MaxIncPathLenToRoot = Math.Max(returnValue.MaxIncPathLenToRoot, pathLen);
