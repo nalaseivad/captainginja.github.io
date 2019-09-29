@@ -110,16 +110,16 @@ namespace GinjaSoft.TreeStuff
       // The value of the tree's root node
       public uint RootValue { get; set; }
 
-      // The length of the longest path of nodes (up through the root node) with consecutively increasing values 
+      // The length of the longest path of nodes (up through the root) with consecutively increasing values 
       public uint MaxIncPathLenToRoot { get; set; }
 
-      // The length of the longest path of nodes (up through the root node) with consecutively decreasing values
+      // The length of the longest path of nodes (up through the root) with consecutively decreasing values
       public uint MaxDecPathLenToRoot { get; set; }
 
-      // The length of the longest path of nodes with either consecutively increasing or decreasing values.  This path
-      // does not have to include the root node and also doesn't have to extend exclusively up the tree towards the
-      // root.  The path can start from a given node, proceed upwards through other nodes and then downwards again
-      // through child nodes.  This is the value of interest.
+      // The length of the longest path of nodes with either consecutively increasing or decreasing values.
+      // This path does not have to include the root node and also doesn't have to extend exclusively up the
+      // tree towards the root.  The path can start from a given node, proceed upwards through other nodes
+      // and then downwards again through child nodes.  This is the value of interest.
       public uint MaxPathLen { get; set; }
     }
   }
@@ -148,8 +148,8 @@ namespace GinjaSoft.TreeStuff
 
     internal static NodeInfo GetNodeInfo(IBinaryNode<uint> tree)
     {
-      // Unfortunately I can't pass ProcessNode directly to DepthFirstPostOrder.  C# won't do the implicit cast from
-      // method group to Func and so a local variable is required.  Sigh.
+      // Unfortunately I can't pass ProcessNode directly to DepthFirstPostOrder.  C# won't do the implicit
+      // cast from method group to Func and so a local variable is required.  Sigh.
       Func<Node<uint>, NodeInfo, NodeInfo, NodeInfo> fn = ProcessNode;
       return BinaryTreeTraversals.DepthFirstPostOrder(tree, fn);
     }
