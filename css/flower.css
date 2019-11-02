@@ -1,0 +1,17 @@
+.flower {
+  display:flex;
+  justify-content: center;
+  stroke: rgb(0,0,0);
+  stroke-width: 1;
+}
+
+.flower .seed {
+  fill: rgb(240, 170, 64);
+	stroke-width: 1;
+	stroke: rgb(0,0,0);
+}
+
+.flower .seed-text {
+	fill: rgb(0,0,0);
+	font-size: 10px;
+}

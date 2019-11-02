@@ -1,7 +1,7 @@
 ---
 layout: post
 title: On trees and paths
-sub_title: And recursive traversals ...
+sub_title: And recursive traversals
 featured_image: /images/woods_path.jpg
 featured_image_alt_text: Trees and paths
 featured_image_title: If a tree falls in a forest and no one is around to hear it, does it make a sound?

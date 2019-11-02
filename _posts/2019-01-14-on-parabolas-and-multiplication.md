@@ -1,7 +1,7 @@
 ---
 layout: post
 title: On parabolas and multiplication
-sub_title: Multiplying with geometry ...
+sub_title: Multiplying with geometry
 featured_image: /images/momath_string_product.jpg
 featured_image_alt_text: "String Product @ MoMath"
 featured_image_title: The string product exhibit at MoMath in NYC
