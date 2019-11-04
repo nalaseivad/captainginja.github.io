@@ -1,6 +1,6 @@
 ---
 layout: post
-title: On trees and paths
+title: On Trees and Paths
 sub_title: And recursive traversals
 featured_image: /images/woods_path.jpg
 featured_image_alt_text: Trees and paths

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: On an interesting 9 digit number
+title: On an Interesting 9 Digit Number
 sub_title: And singing bananas
 featured_image: /images/9_digit_number.png
 featured_image_alt_text: 9 digit number

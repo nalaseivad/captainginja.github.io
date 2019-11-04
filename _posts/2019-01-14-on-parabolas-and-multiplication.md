@@ -1,6 +1,6 @@
 ---
 layout: post
-title: On parabolas and multiplication
+title: On Parabolas and Multiplication
 sub_title: Multiplying with geometry
 featured_image: /images/momath_string_product.jpg
 featured_image_alt_text: "String Product @ MoMath"

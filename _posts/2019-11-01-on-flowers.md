@@ -1,6 +1,6 @@
 ---
 layout: post
-title: On flowers
+title: On Flowers
 sub_title: And irrational numbers ... and JavaScript
 featured_image: /images/flower.jpg
 featured_image_alt_text: Flower
@@ -8,7 +8,7 @@ featured_image_title: "I got hay fever.  I'm all like 'Heeeey! I got a fever and
 featured_image_width: 650
 featured_image_link: https://www.youtube.com/watch?v=cVsQLlk-T0s
 mathjax: 1
-tags: [math]
+tags: [math, code]
 jquery: 1
 script_src: /js/flower.js
 script_ready_eval_string: main()
