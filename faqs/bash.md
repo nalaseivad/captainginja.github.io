@@ -8,7 +8,7 @@ faq: true
 ## Helpful Stuff
 
 `!!` - repeat the command that you last typed.  This is very useful to use with `sudo` if you type a command only to
-then realise that you need elevated privs to run it.
+then realize that you need elevated privs to run it.
 
 ```
 $ mount /dev/sdb /mnt
