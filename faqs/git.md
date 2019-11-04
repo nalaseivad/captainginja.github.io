@@ -15,105 +15,127 @@ Annotated vs lightweight tags
 
 Create a lightweight tag
 
-``` bash
-git tag <tag-name>
+```
+$ git tag <tag-name>
 ```
 
 Create an annotated tag with the message inline
 
-``` bash
-git tag -a <tag-name> -m <message>
+```
+$ git tag -a <tag-name> -m <message>
 ```
 
 Create an annotated tag.  An editor will then start to allow you to type the message text, which can be multi-line.
 
-``` bash
-git tag -a <tag-name>
+```
+$ git tag -a <tag-name>
 ```
 
 List tags
 
-``` bash
-git tag -l
+```
+$ git tag -l
 ```
 
 List tags with messages with up to max-lines lines of the message
 
-``` bash
-git tag -l -n<max-lines>
+```
+$ git tag -l -n<max-lines>
 ```
 
 List remote tags
 
-``` bash
-git ls-remote --tags <remote-name>
+```
+$ git ls-remote --tags <remote-name>
 ```
 
 
 Delete a local tag
 
-``` bash
-git tag --delete <tag-name>
+```
+$ git tag --delete <tag-name>
 ```
 
 Delete a remote tag
 
-``` bash
-git push --delete origin <tag-name>
+```
+$ git push --delete origin <tag-name>
 ```
 
 ## Staging and unstaging files
 
 Stage a file
 
-``` bash
-git add <file-name>
+```
+$ git add <file-name>
 ```
 
 Stage all files
 
-``` bash
-git add --all
+```
+$ git add --all
 ```
 
 Stage new and modified files (not deleted)
 
-``` bash
-git add .
+```
+$ git add .
 ```
 
 Stage modified and deleted files (not new)
 
-``` bash
-git add -u
+```
+$ git add -u
 ```
 
 Unstage a file
 
-``` bash
-git reset <file-name>
+```
+$ git reset <file-name>
 ```
 
 Unstage all currently staged changes
 
-``` bash
-git reset
+```
+$ git reset
+```
+
+## Removing files
+
+Remove a file from the repo and also from the workspace (local filesystem).
+
+```
+$ git rm file1.txt
+$ git commit -m "remove file1.txt"
+```
+
+Remove the file from the repo but leave it in the workspace.
+
+```
+$ git rm --cached file1.txt
+$ git commit -m "remove file1.txt"
 ```
 
 ## Committing
 
 Amend the last commit message
 
-``` bash
-git commit --amend
+```
+$ git commit --amend
+```
+
+Commit and specify a single line commit message.  Do not lauch the default editor to create the commit message.
+
+```
+$ git commit -m "This is my commit message"
 ```
 
 ## Squash commits together
 
 To squash the last n commits into one commit we can use an interactive rebase.  Execute the following command.
 
-``` bash
-git rebase -i HEAD~n
+```
+$ git rebase -i HEAD~n
 ```
 
 This will then launch an editor instance that contains a list of the last n commits.  We can mark these commits to be
@@ -126,86 +148,86 @@ the resulting single commit.  Compose the message, save the file and then close 
 
 Save the current state of your working directory, and the index, and revert to a clean working directory
 
-``` bash
-git stash
+```
+$ git stash
 ```
 
 or equivalently ...
 
-``` bash
-git stash push
+```
+$ git stash push
 ```
 
 List all current stashes
 
-``` bash
-git stash list
+```
+$ git stash list
 ```
 
 Apply the latest stashed state back to your working directory but do not remove it from the stash list
 
-``` bash
-git stash apply
+```
+$ git stash apply
 ```
 
 Apply the latest stashed state back to your working directory and remove it from the stash list
 
-``` bash
-git stash pop
+```
+$ git stash pop
 ```
 
 Clear the stash list
 
-``` bash
-git stash clear
+```
+$ git stash clear
 ```
 
 ## Branching
 
 Create a branch.  Note that this just creates the branch, it doesn't automatically make if the current branch.
 
-``` bash
-git branch <branch-name>
+```
+$ git branch <branch-name>
 ```
 
 Switch to a branch
 
-``` bash
-git checkout <branch-name>
+```
+$ git checkout <branch-name>
 ```
 
 Delete a branch
 
-``` bash
-git branch -d <branch-name>
+```
+$ git branch -d <branch-name>
 ```
 
 List all branches
 
-``` bash
-git branch --list
+```
+$ git branch --list
 ```
 
 or equivalently ...
 
-``` bash
-git branch
+```
+$ git branch
 ```
 
 List all remote branches
 
-``` bash
-git branch --list -r
+```
+$ git branch --list -r
 ```
 
 or equivalently ...
 
-``` bash
-git branch -r
+```
+$ git branch -r
 ```
 
 Delete a remote branch
 
-``` bash
-git branch -d -r <branch-name>
+```
+$ git branch -d -r <branch-name>
 ```
