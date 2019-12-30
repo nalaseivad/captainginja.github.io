@@ -488,3 +488,22 @@ One says to the other, "Do you know how to drive this thing?"
 ```
 
 ---
+
+``` text
+Is it solipsistic in here or is it just me?
+```
+
+---
+
+``` text
+Time flies like an arrow but fruit flies prefer a banana
+```
+
+---
+
+``` text
+I’d known for a while that my sexual desires were getting out of hand but it wasn’t until I spanked a statue that I
+realized I’d hit rock bottom
+```
+
+---
