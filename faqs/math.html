@@ -1,0 +1,19 @@
+---
+layout: faq
+title: Math
+sub_title: Common mathematical rules, techniques and identities, and derivations/proofs
+faq: true
+---
+
+<ul class="faq-list">
+  {% for page in site.pages %}
+    {% if page.math_faq == true %}
+  <li class="faq-list-item">
+    <a class="link" href="{{ page.url }}" title="{{ page.title }}" target="_self">
+      <div class="title">{{ page.title }}</div>
+      <div class="sub-title">{{ page.sub_title }}</div>
+    </a>
+  </li>
+    {% endif %}
+  {% endfor %}
+</ul>

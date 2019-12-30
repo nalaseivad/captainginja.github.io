@@ -10,5 +10,5 @@ featured_image_link: /blog/2015/07/08/on-how-legos-is-wrong
 tags: [lego]
 ---
 
-More [fun](https://www.youtube.com/watch?v=t23tq-5Vb8Y) with LEGO<sup>&#174;</sup>.  This time we make a gun, and a
+More [fun](https://www.youtube.com/watch?v=ybWk_8xpFg0) with LEGO<sup>&#174;</sup>.  This time we make a gun, and a
 [badass](https://www.amazon.com/dp/1593272847) one too.
