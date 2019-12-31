@@ -9,7 +9,7 @@ mathjax: 1
 Consider the general quadratic equation $$ax^2 + bx + c$$.  We want to find the values of $$x$$ that satisfy
 $$ax^2 + bx + c = 0$$.  Let's rearrange things a bit.
 
-$$ax^2 + bx + c = 0 \implies x^2 + \frac{b}{a} + \frac{c}{a} = 0 \implies
+$$ax^2 + bx + c = 0 \implies x^2 + \frac{b}{a}x + \frac{c}{a} = 0 \implies
 (x + \frac{b}{2a})^2 - \frac{b^2}{4a^2} + \frac{c}{a} = 0$$
 
 $$\implies (x + \frac{b}{2a})^2 = \frac{b^2}{4a^2} - \frac{c}{a} = \frac{b^2 - 4ac}{4a^2}$$
