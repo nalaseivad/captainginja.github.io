@@ -2,7 +2,7 @@
 layout: math-faq
 title: Factoring the general quadratic equation
 sub_title: A method
-math_faq: true
+faq_type: math
 mathjax: 1
 ---
 

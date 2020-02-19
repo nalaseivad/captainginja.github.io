@@ -2,7 +2,7 @@
 layout: math-faq
 title: The quadratic formula
 sub_title: To find the roots of the general quadratic equation
-math_faq: true
+faq_type: math
 mathjax: 1
 ---
 

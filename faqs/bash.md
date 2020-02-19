@@ -1,7 +1,7 @@
 ---
 layout: faq
 title: Bash
-sub_title: Common commands and how-tos
+sub_title: Wham, bam, thank you ma'am
 faq: true
 ---
 

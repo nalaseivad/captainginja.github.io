@@ -2,13 +2,19 @@
 layout: page
 ---
 
+<div class="post-header">
+  <h1 class="title">FAQs</h1>
+  <h2 class="sub-title">Friendly reminders of how to do stuff for those of a forgetful disposition</h2>
+</div>
 <ul class="faq-list">
   {% for page in site.pages %}
     {% if page.faq == true %}
   <li class="faq-list-item">
     <a class="link" href="{{ page.url }}" title="{{ page.title }}" target="_self">
       <div class="title">{{ page.title }}</div>
+      {% if page.sub_title != "" %}
       <div class="sub-title">{{ page.sub_title }}</div>
+      {% endif %}
     </a>
   </li>
     {% endif %}

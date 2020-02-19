@@ -1,7 +1,7 @@
 ---
 layout: faq
 title: Git
-sub_title: Common commands and how-tos
+sub_title: 
 faq: true
 ---
 

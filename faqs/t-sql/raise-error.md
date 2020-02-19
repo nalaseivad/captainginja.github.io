@@ -1,8 +1,8 @@
 ---
 layout: faq
-title: T-SQL
-sub_title: Common commands and how-tos
-faq: true
+title: Debug output
+sub_title: Getting non-buffered feedback/ progress from batches and stored procedures
+faq_type: t-sql
 ---
 
 ## Debug output
@@ -29,3 +29,8 @@ RAISERROR('Checkpoint, @@ERROR=%d', 0, 1, @@ERROR) WITH NOWAIT
 ``` sql
 RAISERROR('Checkpoint, stage=%s', 0, 1, @stage) WITH NOWAIT
 ```
+
+And by the way, why is it *RaisError* and not *RaiseError*?  I don't know if this is true but I saw this quote once ...
+
+"Ever asked yourself why there is only one “e” in RaisError?  The command comes from the old Sybase days where two
+consecutive characters were cut back to one to save space."

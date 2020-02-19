@@ -2,7 +2,7 @@
 layout: math-faq
 title: Triganometric identities
 sub_title: A few of them anyway
-math_faq: true
+faq_type: math
 mathjax: 1
 ---
 
