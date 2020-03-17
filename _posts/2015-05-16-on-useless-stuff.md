@@ -12,7 +12,7 @@ mathjax: 0
 tags: [misc]
 ---
 
-# What do you do when you get an Arduino starter kit as a gift?
+What do you do when you get an Arduino starter kit as a gift?
 
 You make a [useless box](https://www.youtube.com/watch?v=6YQcVcsEraE)!  Yes, I know you can make one of these with just
 a servo motor and two switches but you can also program an Arduino to do it.  Why do it the simple way when you can add

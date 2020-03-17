@@ -11,7 +11,7 @@ mathjax: 0
 tags: [code, algorithms]
 ---
 
-# The question
+# The Question
 
 This post is inspired by a question that I was asked in an interview once.  Here it is ...
 
@@ -27,13 +27,13 @@ An example is in order.  In this tree ...
 to the 30 node and then down to the lowest 40 node).  We could also list this path in descending order, the order of
 traversal doesn't matter.
 
-# Solution strategies
+# Solution Strategies
 
 So how would we go about solving this for a general binary tree?  Well, most tree algorithms involve some sort of
 recursive traversal while maintaining state.  The traversals are pretty generic, it's the state you track along the way
 and how you use that state that will be key.
 
-# Binary tree traversals
+# Binary Tree Traversals
 
 There are various types of tree traversal.  The first distinction is between breadth-first and depth-first.  In the
 former the tree is fully explored left to right at each level before proceeding to the next level, whereas in the
@@ -49,7 +49,7 @@ processed first and then the root).
 
 ![Pre vs in vs post order](/images/binary_tree_traversal_pre_vs_in_vs_post_order.png){: .center-image }
 
-# Generic code for tree traversal
+# Generic Code for Tree Traversal
 
 To solve this problem we are going to need a depth-first, post-order traversal, i.e. one where we process all the
 children before we process the root.  This represents an exhaustive, bottom up search.  Let's write some code to do
@@ -90,7 +90,7 @@ supply.  This function has to adhere to a given prototype, it needs to take thre
 to process and two instances of a result type - that will be generated from the processing of the left and right
 children respectively) and it needs to return a result type that will represent the result of processing the node.
 
-# Specific code for the problem at hand
+# Specific Code for the Problem at Hand
 
 Here's how we might write some client code to use the generic traversal code.  First we need to define the result type
 (TResult) that will represent the result of processing a node.  This type will be used to hold information about the
@@ -248,7 +248,7 @@ namespace GinjaSoft.TreeStuff
 }
 ```
 
-# Solution validation
+# Solution Validation
 
 Let's verify that our code will solve the example that we provided before ...
 

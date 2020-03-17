@@ -11,7 +11,7 @@ mathjax: 1
 tags: [math]
 ---
 
-# A puzzle
+# A Puzzle
 
 This post is inspired by a [puzzle](https://www.youtube.com/watch?v=3wv92-MAhss) that was posed by Mr. James Grime on
 his YouTube channel, singingbanana.  The puzzle can be stated thus ...
@@ -22,14 +22,14 @@ and so on up through 9.  Trivially, the first digit will always be a number divi
 
 How many such numbers have this property?
 
-# Solution strategies
+# Solution Strategies
 
 Clearly we could write some code to implement a brute-force solution.  We could generate all the possible 9 digit
 numbers and test for the requisite properties of the sub-numbers.  That would be inelegant though.  Surely we can use
 some clever mathematics to solve this, or at least to significantly pare down the space of possible solutions such that
 we could solve it by hand.  Let's try.
 
-# A mathematical approach
+# A Mathematical Approach
 
 Let's use the letters \\(a\\) through \\(i\\) as labels for the digits in the number that we seek.  So the number is
 \\(abcdefghi\\) and we can describe its required properties using the following expressions ...

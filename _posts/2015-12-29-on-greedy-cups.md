@@ -11,6 +11,6 @@ mathjax: 0
 tags: [misc]
 ---
 
-# Is it magic or is it science?
+Is it magic or is it science?
 
 Don't be greedy now.  [Fill your cup](https://www.youtube.com/watch?v=HJlnGBbikTw) but not too much. 
