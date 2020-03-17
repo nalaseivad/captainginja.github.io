@@ -10,7 +10,7 @@ featured_image_link: https://www.youtube.com/watch?v=D-UmfqFjpl0
 tags: [sql, ad]
 ---
 
-# Authenticate Me You Shall.  But How?
+# Authenticate You I Will.  But How?
 
 When you configure a SQL Server instance one choice is what
 [authentication](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/sql/authentication-in-sql-server) modes
