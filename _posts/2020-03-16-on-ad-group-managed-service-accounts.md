@@ -72,6 +72,12 @@ PS C:\Users\username> Add-ADGroupMember -Identity grp-sqlag01 -Members sqlnj01$,
 
 Note that you have to add the `$` postfix to each machine name.
 
+We can then check the group membership, like so ...
+
+```
+PS C:\Users\username> Get-ADGroupMember -Identity grp-sqlag01
+```
+
 Next we create the service account, like so ...
 
 ```
@@ -86,8 +92,15 @@ Note that we specified the OU where we want the service account to live.
 
 # Installing a Group Managed Service Account on a Computer
 
-Next we need to install the service account on the three machines where it is going to be used.  We can do this via
-PowerShell from the machine where we have been working already, via ...
+Next we need to install the service account on the three machines where it is going to be used.
+
+Note that if your environment consists of geographically distributed, replicated domain controllers, and you edited the
+group managed service account settings on a computer in a location far from the computer where you will be installing
+the service account, then you will have to wait until AD replication has brought the new settings to the domain
+controller closest to that computer before you execute the following.  If any of the following commands raise an error
+just wait a while and try again.
+
+We can install the service account from the machine where we have been working already, via PowerShell ...
 
 ```
 PS C:\Users\username> Enter-PSSession -ComputerName <hostname>
