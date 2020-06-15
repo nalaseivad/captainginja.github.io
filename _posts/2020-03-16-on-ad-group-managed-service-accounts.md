@@ -164,3 +164,23 @@ then that "The new logon name will not take effect until you stop and restart th
 the final step.
 
 We repeat this for the other machines in the group and we are done.
+
+# Service Dependencies
+
+One consequence of having a service logon as a managed service account is that a domain controller must be accessible
+when the service starts up in order for Windows to retrieve the managed password from AD.  This means that the network
+must be up and fully configured in order for a service to start.  This makes sense but unfortuntelay it leads to a
+problem when a computer reboots since the Service Control Manager will likely try to start services before the network
+service is itself fully started.  This will lead to "automatic" services failing to start after a reboot.  Not good.
+
+However, we can fix this by configuring service dependencies.
+
+Run regedit.exe and then navigate to the HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\ folder.  Then open the
+folder for the service that you have configured to logon as a service account (in this example it was MSSQLSERVER) and
+look for a REG_MULTI_SZ key/value called DependOnService.  Create it if it doesn't already exist and then edit the value
+to add Win32Time and Netlogon with each value on a new line.  Like this ...
+
+![DependOnService](/images/depend_on_service.png)
+
+Click OK and then close regedit.  With this done the Windows Service Control Manager will not try to start this service
+until the Netlogon and W32Time services are started which should ensure that AD is accessible.
