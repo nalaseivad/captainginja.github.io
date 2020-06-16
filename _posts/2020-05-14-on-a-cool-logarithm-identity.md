@@ -15,7 +15,7 @@ What is the value of this sum?
 
 $$\frac{1}{log_{2}(100!)} + \frac{1}{log_{3}(100!)} + \frac{1}{log_{4}(100!)} + \ldots + \frac{1}{log_{100}(100!)}$$
 
-Well, it turns out that the answer is just $$1$$.  Isn't that cool.  Let's proove it.
+Well, it turns out that the answer is just $$1$$.  Isn't that cool.  Let's prove it.
 
 # Prep
 
