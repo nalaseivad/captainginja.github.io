@@ -110,6 +110,14 @@ Have you been hit with a rhythm stick?
 You could be entitled to compensation with a personal Ian Dury claim.
 ```
 
+<a name="a-stick"></a>
+---
+
+``` text
+Q: What's brown and sticky?
+A: A stick
+```
+
 ---
 
 ``` text

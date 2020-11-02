@@ -1,7 +1,7 @@
 ---
 layout: faq
 title: Git
-sub_title: 
+sub_title: Because even though he is one, Linus gave the world a really great version-control system
 faq: true
 ---
 
@@ -146,6 +146,8 @@ the resulting single commit.  Compose the message, save the file and then close 
 
 ## Stashing
 
+Not to be confused with [Phishing](https://www.youtube.com/watch?v=kYvWhWVxw1A).
+
 Save the current state of your working directory, and the index, and revert to a clean working directory
 
 ```
@@ -183,6 +185,8 @@ $ git stash clear
 ```
 
 ## Branching
+
+Not to be confused with a [stick]({{ site.url }}/crap-jokes#a-stick).
 
 Create a branch.  Note that this just creates the branch, it doesn't automatically make if the current branch.
 

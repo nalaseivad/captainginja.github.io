@@ -1,7 +1,7 @@
 ---
 layout: faq
 title: Tmux
-sub_title: 
+sub_title: Because you just hate a network disconnect to kill that Linux session
 faq: true
 ---
 

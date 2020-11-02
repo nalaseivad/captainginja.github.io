@@ -1,7 +1,7 @@
 ---
 layout: faq
 title: Docker
-sub_title: 
+sub_title: It's all the rage apparently
 faq: true
 ---
 
