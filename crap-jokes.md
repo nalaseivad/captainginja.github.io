@@ -509,3 +509,10 @@ realized I’d hit rock bottom
 ```
 
 ---
+
+``` text
+Three guys were stuck on a boat.  They had four cigarettes but no lighter.  So, they threw one cigarette overboard
+and the boat became a cigarette lighter.
+```
+
+---
