@@ -21,7 +21,7 @@ Well, it turns out that the answer is just $$1$$.  Isn't that cool.  Let's prove
 
 Let's recall some basic logarithmic identitities.  First the relationship between logs of different bases ...
 
-$$\log_{c}(a) = \frac{log_{b}(a)}{\log_{c}{b}}$$
+$$\log_{b}(a) = \frac{log_{c}(a)}{\log_{c}{b}}$$
 
 And then the relationship between the log of the product of two numbers and the logs of those numbers ...
 
@@ -35,13 +35,15 @@ $$\frac{1}{log_{2}(100!)} + \frac{1}{log_{3}(100!)} + \frac{1}{log_{4}(100!)} + 
 
 We know that ...
 
-$$\log_{c}(a) = \frac{log_{b}(a)}{\log_{c}{b}}$$
+$$\log_{b}(a) = \frac{log_{c}(a)}{\log_{c}{b}}$$
 
 So ...
 
 $$\log_{2}(100!) = \frac{log(100!)}{\log{2}}$$
 
-And therefore ...
+Where $$log$$ here represents log to the base $$e$$.
+
+Therefore ...
 
 $$\frac{1}{\log_{2}(100!)} = \frac{\log{2}}{log(100!)}$$
 
