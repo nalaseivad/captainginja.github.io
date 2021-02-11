@@ -450,7 +450,7 @@ Well, to be Frank I'd have to change my name
 ---
 
 ``` text
-Dogs can't operate MRI scanners but cat scan
+Dogs can't operate MRI machines but cat scan
 ```
 
 ---
