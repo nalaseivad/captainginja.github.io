@@ -84,7 +84,7 @@ Next we create the service account, like so ...
 PS C:\Users\username> New-ADServiceAccount `
 >>> -Name gmsa-sqlag01 `
 >>> -DNSHostName gmsa-sqlag01.mycompany.com `
->>> -PrincipalsAllowedToRetreieveManagedPassword grp-sqlag01 `
+>>> -PrincipalsAllowedToRetrieveManagedPassword grp-sqlag01 `
 >>> -Path "OU=Managed Service Accounts,DC=MyCompany,DC=Com"
 ```
 
