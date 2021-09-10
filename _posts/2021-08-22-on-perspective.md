@@ -75,7 +75,7 @@ When there's nothing but mess all around you, it helps to smile<br/>
 
 <img src="/images/the_tao_of_ted/8.jpg" width="600" />
 <div class="center" style="width:600px;margin:auto;margin-top:1em;margin-bottom:1em">
-My riches consist not in the the extent of my possessions but in the fewness of my wants<br/>
+My riches consist not in the extent of my possessions but in the fewness of my wants<br/>
 ~ J. Brotherton
 </div>
 <hr style="width:50%;margin:auto" />
@@ -132,7 +132,7 @@ I am an optimist.  It does not seem too much use being anything else.<br/>
 
 <img src="/images/the_tao_of_ted/16.jpg" width="600" />
 <div class="center" style="width:600px;margin:auto;margin-top:1em;margin-bottom:1em">
-Enjoy the little things, for one day you may look back and realize they were the the big things<br/>
+Enjoy the little things, for one day you may look back and realize they were the big things<br/>
 ~ Robert Brault
 </div>
 <hr style="width:50%;margin:auto" />
