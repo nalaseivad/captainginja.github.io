@@ -100,6 +100,14 @@ Unstage all currently staged changes
 $ git reset
 ```
 
+## Hard reset local state to match remote state for a branch
+
+```
+$ git fetch --all
+$ git checkout <branch-name>
+$ git reset --hard origin/<branch-name>
+```
+
 ## Removing files
 
 Remove a file from the repo and also from the workspace (local filesystem).
