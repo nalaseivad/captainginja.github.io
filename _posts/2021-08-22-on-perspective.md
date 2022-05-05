@@ -61,7 +61,7 @@ Once my fingers were the most fascinating thing I'd ever felt<br/>
 
 <img src="/images/the_tao_of_ted/6.jpg" width="600" />
 <div class="center" style="width:600px;margin:auto;margin-top:1em;margin-bottom:1em">
-A father carries pictured where his money used to be<br/>
+A father carries pictures where his money used to be<br/>
 ~ Unknown
 </div>
 <hr style="width:50%;margin:auto" />
