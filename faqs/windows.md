@@ -24,14 +24,44 @@ The fix is to have the user log out of and back into Windows on the machine on w
 relogin Windows will rediscover the security groups that they are a member of and cache that info anew.  Then when they
 launch SSMS, Windows Authentication to the required SQL Server instance will work.
 
-Or ... they can hack it like this ...
+Or they can hack it like this ...
 
 * Close SSMS
-* ```taskkill /f /im explorer.exe```
-* ```runas /user:<domain>\<username> explorer.exe```
+* Run these commands
+```
+taskkill /f /im explorer.exe
+runas /user:<domain>\<username> explorer.exe
+```
 * Restart SSMS
 
-Item #3 will restart Windows Explorer and "relogin".  This will reread security group membership.  Any new process
-started from the new Windows Explorer process will be a subprocess and will inherit group membership.  The newly
-launched SSMS instance will then be able to login to the required SQL Server instance.
+The `runas` command will restart Windows Explorer and "relogin".  This will reread security group membership.  Any
+new process started from the new Windows Explorer process will be a subprocess and will inherit group membership.  The
+newly launched SSMS instance will then be able to login to the required SQL Server instance.
+
+## Force Stop a Service
+
+Sometimes when you try to stop a Windows service it hangs in the 'stopping' state.  In order to force it to stop we can
+kill the process.  Start a cmd.exe session as Administrator ....
+
+First find the process id of the process that is hosting the service ...
+
+```
+C:\Users\jsmith> sc queryex MSSQLSERVER
+SERVICE_NAME: MSSQLSERVER
+        TYPE               : 10  WIN32_OWN_PROCESS
+        STATE              : 4  RUNNING
+                                (STOPPABLE, PAUSABLE, ACCEPTS_SHUTDOWN)
+        WIN32_EXIT_CODE    : 0  (0x0)
+        SERVICE_EXIT_CODE  : 0  (0x0)
+        CHECKPOINT         : 0x0
+        WAIT_HINT          : 0x0
+        PID                : 17264
+        FLAGS              :
+```
+
+Then kill the process ...
+
+```
+taskkill /pid 17264 /f
+```
 
