@@ -1,7 +1,7 @@
 ---
 layout: faq
 title: Markdown
-sub_title: 
+sub_title: Common how-tos
 faq: true
 ---
 
