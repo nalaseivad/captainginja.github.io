@@ -110,7 +110,6 @@ Have you been hit with a rhythm stick?
 You could be entitled to compensation with a personal Ian Dury claim.
 ```
 
-<a name="a-stick"></a>
 ---
 
 ``` text
@@ -513,6 +512,52 @@ realized I’d hit rock bottom
 ``` text
 Three guys were stuck on a boat.  They had four cigarettes but no lighter.  So, they threw one cigarette overboard
 and the boat became a cigarette lighter.
+```
+
+---
+
+``` text
+Q: Why does the Norwegian navy have QR codes on the side of their ships?
+A: So when the ships arrive back in port the harbormaster can Scandinavian.
+```
+
+---
+
+``` text
+I'm so meta even this acronym
+```
+
+---
+
+``` text
+I'm terrified of elevators.  I'm going to start taking steps to avoid them.  But then I don't trust stairs either,
+they're always up to something.
+```
+
+---
+
+``` text
+Doctor:  I'm sorry to inform you but you have a rare condition causing you to lose all memory of 80s pop music.
+Patient: What's the cure?
+Doctor:  It's worse than I thought.
+```
+
+---
+
+``` text
+A superconductor walks into a bar.
+The bartender says "We don't serve your kind in here."
+The superconductor leaves without any resistance.
+But he doesn't go home because he's ohm-less.
+```
+
+---
+
+``` text
+What do we want?
+When do we want them?
+Asynchronous event jokes!
+Now!
 ```
 
 ---
