@@ -6,7 +6,10 @@ permalink: /crap-jokes
 # Crap Jokes
 
 I am a huge fan of "crap jokes", i.e. jokes that are so bad they are actually good; the kind that make you groan but
-also make you smile.  Here's a selection.  Be warned, some of these are not in the best possible taste, but they are
+also make you smile.  In America these are generally known as "Dad jokes" but I don't see why fathers should have a
+monopoly on them.  Anyone can tell them, what matters is that they are crap.
+
+Here's a selection.  Be warned, some of these are not in the best possible taste, but they are
 still funny.
 
 &nbsp;
@@ -353,16 +356,7 @@ Mountains aren't funny.  They're hill areas.
 Not a crap joke this one, just a great joke that references a great comedian ...
 
 ``` text
-I used to miss Mitch Hedberg. I still do, but I used to too.﻿
-```
-
----
-
-Again, not a crap joke; more an intellectual joke.  A whole different category of humor.
-
-``` text
-"People who can't distinguish between etymology and entomology bug me in ways I
-cannot put into words."
+I used to miss Mitch Hedberg. I still do, but I used to too.
 ```
 
 ---
@@ -503,15 +497,15 @@ Is it solipsistic in here or is it just me?
 ---
 
 ``` text
-I’d known for a while that my sexual desires were getting out of hand but it wasn’t until I spanked a statue that I
-realized I’d hit rock bottom
+I’d known for a while that my sexual desires were getting out of hand but it
+wasn’t until I spanked a statue that I realized I’d hit rock bottom
 ```
 
 ---
 
 ``` text
-Three guys were stuck on a boat.  They had four cigarettes but no lighter.  So, they threw one cigarette overboard
-and the boat became a cigarette lighter.
+Three guys were stuck on a boat.  They had four cigarettes but no lighter.
+So, they threw one cigarette overboard and the boat became a cigarette lighter.
 ```
 
 ---
@@ -549,15 +543,6 @@ A superconductor walks into a bar.
 The bartender says "We don't serve your kind in here."
 The superconductor leaves without any resistance.
 But he doesn't go home because he's ohm-less.
-```
-
----
-
-``` text
-What do we want?
-When do we want them?
-Asynchronous event jokes!
-Now!
 ```
 
 ---
