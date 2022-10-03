@@ -17,6 +17,12 @@ cannot put into words."
 
 ---
 
+On a [similar](https://www.youtube.com/watch?v=PBWpXSiP5xY&t=279s) note ...
+
+![The wrong superhero](https://imgs.xkcd.com/comics/wrong_superhero.png)
+
+---
+
 ``` text
 What do we want?
 When do we want them?
