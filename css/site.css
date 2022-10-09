@@ -164,7 +164,7 @@ img {
 .post-header .sub-title {
   color: rgb(116, 109, 108);
   font-size: 1em;
-  text-decoration: none;
+  text-decoration: none;  
   border: none;
   text-align: top;
 }
@@ -289,7 +289,7 @@ img {
 .blog-post-list-item {
   display: grid;
   grid-template-columns: 130px 130px auto;
-  grid-template-rows: max-content auto;
+  grid-template-rows: 1.5em auto;
   border-bottom-style: solid;
   border-bottom-width: 1px;
   border-bottom-color: rgba(128, 128, 128, 0.2);
