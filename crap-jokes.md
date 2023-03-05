@@ -546,3 +546,7 @@ But he doesn't go home because he's ohm-less.
 ```
 
 ---
+
+``` text
+Lance isn't a very popular name these days but in medieval times people were called Lance a lot.
+```
