@@ -10,14 +10,6 @@ mathjax: 1
 
 $$\sin^2\theta + \cos^2\theta = 1$$
 
-In this right triangle ...
-
-![Right triangle](/images/right_triangle_sin_cos.png)
-
-Pythagoras' Theorem states that $$a^2 + b^2 = c^2$$.  Dividing both sides by $$c^2$$ then gives us
-$$\frac{a^2}{c^2} + \frac{b^2}{c^2} = 1$$.  Since the definitions of $$\sin\theta$$ and $$\cos\theta$$ are,
-respectively, $$\frac{b}{c}$$ and $$\frac{a}{c}$$, the above identity follows immediately.
-
 Simple manipulation gives us the following additional identities ...
 
 $$\sin^2\theta = 1 -\cos^2\theta$$

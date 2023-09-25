@@ -2,7 +2,7 @@
 layout: post
 title: On Ants, Boxes and Straight Lines
 sub_title: "And honey ..."
-featured_image: /images/ant-honey-3d-box.png
+featured_image: /images/ant_honey_3d_box.png
 featured_image_alt_text: "alt text"
 featured_image_title: "Yo mama is so stupid, she stared at a juice box for hours because it said concentrate."
 featured_image_width: 600
@@ -46,17 +46,17 @@ inside of a box?
 We need to transform our box into a flat surface.  Let's imagine that it was a real cardboard box so that we could cut
 it along some of its edges and then "unroll" it to get ...
 
-![The box, unrolled](/images/ant-honey-flat-box.png)
+![The box, unrolled](/images/ant_honey_flat_box.png)
 
 Aha!  Now there is an obvious straight line path from the ant to the honey ...
 
-![The box, unrolled, with path](/images/ant-honey-flat-box-with-triangle.png)
+![The box, unrolled, with path](/images/ant_honey_flat_box_with_triangle.png)
 
 This path is $$\sqrt{32^2 + 24^2} = 40$$ cm long.  Better!  And this is indeed the shortest path.
 
 So what does this look like on the box?  Well, it looks like this ...
 
-![The box, 3D, with path](/images/ant-honey-3d-box-with-path.png)
+![The box, 3D, with path](/images/ant_honey_3d_box_with_path.png)
 
 And how would we write down a description of the route?  The strategy is essentially to "cut corners", but exactly how
 much?  We can easily calculate the coordinates of the way points, and then just tell the ant to walk in a straight line
