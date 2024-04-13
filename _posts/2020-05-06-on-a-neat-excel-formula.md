@@ -25,13 +25,13 @@ a string starting from a given index into the string.  I use it all the time.
 ```
 FIND(<find_text>, <within_text>, [<start_index>])
 
-Returns the index (1-based) of the first occurance of <find_text> within <within_text> starting from the character at
-index <start_index>.  If <find_text> is not found then it returns #VALUE!.
+Returns the index (1-based) of the first occurance of <find_text> within <within_text> starting from the
+character at index <start_index>.  If <find_text> is not found then it returns #VALUE!.
 
 <find_text>      Required.  The text to find.
 <within_text>    Required.  The text to search.
-<start_index>    Optional.  A (1-based) index offset into <within_text> to start the search for <find_text> from.  The
-                 default is the first character.
+<start_index>    Optional.  A (1-based) index offset into <within_text> to start the search for <find_text>
+                 from.  The default is the first character.
 ```
 
 Note that because Excel was written for business users as opposed to programmers, the indexes are all 1-based as opposed
@@ -49,7 +49,8 @@ inventive use of a few other Excel functions we can do it.  Here's how ...
 ```
 =IF(ISERROR(FIND(A2, A1)),
     #VALUE!,
-    FIND(REPT("~", LEN(A2)), SUBSTITUTE(A1, A2, REPT("~", LEN(A2)), (LEN(A1) - LEN(SUBSTITUTE(A1, A2, ""))) / LEN(A2))))
+    FIND(REPT("~", LEN(A2)),
+         SUBSTITUTE(A1, A2, REPT("~", LEN(A2)), (LEN(A1) - LEN(SUBSTITUTE(A1, A2, ""))) / LEN(A2))))
 ```
 
 OK, that's clearly not as simple as FIND, but it works.  How does it work though?  Let's break it down.
@@ -59,7 +60,8 @@ string at all.  We use FIND to test for that.  If FIND returns #VALUE!, an error
 remove that logic and look at what's left ...
 
 ```
-FIND(REPT("~", LEN(A2)), SUBSTITUTE(A1, A2, REPT("~", LEN(A2)), (LEN(A1) - LEN(SUBSTITUTE(A1, A2, ""))) / LEN(A2)))
+FIND(REPT("~", LEN(A2)),
+     SUBSTITUTE(A1, A2, REPT("~", LEN(A2)), (LEN(A1) - LEN(SUBSTITUTE(A1, A2, ""))) / LEN(A2)))
 ```
 
 Let's break this down some more ...
@@ -81,9 +83,9 @@ SUBSTITUTE(<text>, <old_text>, <new_text>, [<instance_num>])
 
 <new_text>       Required.  The text you want to replace <old_text> with.
 
-<instance_num>   Optional.  Specifies which occurrence of <old_text> you want to replace with <new_text>.  If you
-                 specify <instance_num>, only that instance of <old_text> is replaced.  Otherwise, every occurrence of
-                 <old_text> in <text> is changed to <new_text>.
+<instance_num>   Optional.  Specifies which occurrence of <old_text> you want to replace with <new_text>.  If
+                 you specify <instance_num>, only that instance of <old_text> is replaced.  Otherwise, every
+                occurrence of <old_text> in <text> is changed to <new_text>.
 ```
 
 We use SUBSTITUTE to create a version of the string that has the last instance of the substring replaced with a
@@ -139,12 +141,12 @@ A4: =MID(A1, A3 + 1, LEN(A1) - A3)      -> foo.txt
 Let's work this through from the inside out ...
 
 ```
-SUBSTITUTE(A1, A2, "")                                                -> C:somequitenestedfilepathfoo.txt
-LEN(SUBSTITUTE(A1, A2, ""))                                           -> 32
-LEN(A1) - LEN(SUBSTITUTE(A1, A2, ""))                                 -> 6
-(LEN(A1) - LEN(SUBSTITUTE(A1, A2, ""))) / LEN(A2)                     -> 6
-SUBSTITUTE(A1, A2, REPT("~", LEN(A2)), 6)))                           -> C:\some\quite\nested\file\path~foo.txt
-FIND(REPT("~", LEN(A2)), SUBSTITUTE(A1, A2, REPT("~", LEN(A2)), 6)))  -> 31
+SUBSTITUTE(A1, A2, "")                                              -> C:somequitenestedfilepathfoo.txt
+LEN(SUBSTITUTE(A1, A2, ""))                                         -> 32
+LEN(A1) - LEN(SUBSTITUTE(A1, A2, ""))                               -> 6
+(LEN(A1) - LEN(SUBSTITUTE(A1, A2, ""))) / LEN(A2)                   -> 6
+SUBSTITUTE(A1, A2, REPT("~", LEN(A2)), 6)                           -> C:\some\quite\nested\file\path~foo.txt
+FIND(REPT("~", LEN(A2)), SUBSTITUTE(A1, A2, REPT("~", LEN(A2)), 6)) -> 31
 ```
 
 Since the substring that we were searching for was only one character long we could have simplified this a bit to ...
@@ -183,12 +185,12 @@ A4: =MID(A1, A3 + 1, LEN(A1) - A3)      -> bung
 Let's work this through from the inside out ...
 
 ```
-SUBSTITUTE(A1, A2, "")                                                -> foobarbazboofbangbung
-LEN(SUBSTITUTE(A1, A2, ""))                                           -> 21
-LEN(A1) - LEN(SUBSTITUTE(A1, A2, ""))                                 -> 15
-(LEN(A1) - LEN(SUBSTITUTE(A1, A2, ""))) / LEN(A2)                     -> 5
-SUBSTITUTE(A1, A2, REPT("~", LEN(A2)), 6)))                           -> foo|||bar|||baz|||boof|||bang~~~bung
-FIND(REPT("~", LEN(A2)), SUBSTITUTE(A1, A2, REPT("~", LEN(A2)), 6)))  -> 30
+SUBSTITUTE(A1, A2, "")                                              -> foobarbazboofbangbung
+LEN(SUBSTITUTE(A1, A2, ""))                                         -> 21
+LEN(A1) - LEN(SUBSTITUTE(A1, A2, ""))                               -> 15
+(LEN(A1) - LEN(SUBSTITUTE(A1, A2, ""))) / LEN(A2)                   -> 5
+SUBSTITUTE(A1, A2, REPT("~", LEN(A2)), 6)                           -> foo|||bar|||baz|||boof|||bang~~~bung
+FIND(REPT("~", LEN(A2)), SUBSTITUTE(A1, A2, REPT("~", LEN(A2)), 6)) -> 30
 ```
 
 QED
