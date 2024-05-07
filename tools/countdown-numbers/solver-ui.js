@@ -81,6 +81,27 @@ function solve() {
     _renderSolution(`${target} = ${solution}`);
 };
 
+function showWindowInfo(event) {
+  let type = "";
+  let angle = "";
+  if (event) {
+    const type = event.target.type;
+    const angle = event.target.angle;
+  }
+  var windowSize = document.getElementById('window-info');
+  const width = window.innerWidth;
+  const height = window.innerHeight;
+  windowSize.textContent = `${width} x ${height}, Orientation: ${type}, ${angle} degrees.`;
+}
+
 document.addEventListener('DOMContentLoaded', (event) => {
   document.getElementById('solveButton').addEventListener('click', solve);
+});
+
+window.addEventListener('resize', (event) => {
+  showWindowInfo(null)
+});
+
+screen.orientation.addEventListener('change', (event) => {
+  showWindowInfo(event)
 });
