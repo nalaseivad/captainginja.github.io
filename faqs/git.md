@@ -196,7 +196,7 @@ $ git stash clear
 
 Not to be confused with a [stick]({{ site.url }}/crap-jokes#a-stick).
 
-Create a branch.  Note that this just creates the branch, it doesn't automatically make if the current branch.
+Create a branch.  Note that this just creates the branch, it doesn't automatically make it the current branch.
 
 ```
 $ git branch <branch-name>
