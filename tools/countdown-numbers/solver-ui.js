@@ -84,9 +84,14 @@ function solve() {
 function showWindowInfo(event) {
   let type = "";
   let angle = "";
-  if (event) {
-    const type = event.target.type;
-    const angle = event.target.angle;
+  if (event && event.target) {
+    type = event.type;
+    if (event.target.angle !== undefined) {
+      angle = event.target.angle;
+    }
+    else if (screen.orientation && screen.orientation.angle !== undefined) {
+      angle = screen.orientation.angle;
+    }
   }
   var windowSize = document.getElementById('window-info');
   const width = window.innerWidth;
@@ -96,12 +101,8 @@ function showWindowInfo(event) {
 
 document.addEventListener('DOMContentLoaded', (event) => {
   document.getElementById('solveButton').addEventListener('click', solve);
+  //showWindowInfo();
 });
 
-window.addEventListener('resize', (event) => {
-  showWindowInfo(null)
-});
-
-screen.orientation.addEventListener('change', (event) => {
-  showWindowInfo(event)
-});
+//window.addEventListener('resize', showWindowInfo);
+//window.addEventListener('orientationChange', showWindowInfo);

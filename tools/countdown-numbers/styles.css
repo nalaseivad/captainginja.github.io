@@ -3,25 +3,35 @@ body {
 }
 
 h1 {
-  font-size: 1.5rem;
-  width: 30rem;
+  font-size: 1rem;
+  width: 24rem;
   text-align: center;
 }
 
+/*
 label {
   justify-self: end;
 }
+*/
 
+/*
 input {
   justify-self: end;
   width: 100%;
 }
+*/
 
 #form-group {
+  font-size: 1rem;
   display: grid;
-  grid-template-columns: 15rem 15rem;
+  grid-template-columns: 5rem 17rem;
   gap: 10px;
   align-items: center;
+}
+
+#form-group #instructions {
+  grid-column: span 2;
+  align-items: left;
 }
 
 #solutions-title {
@@ -33,7 +43,7 @@ input {
   padding-left: 10px;
   border: 1px solid #ccc;
   min-height: 50px;
-  width: 30rem;
+  width: 22rem;
 }
 
 .solutions-list-item {
