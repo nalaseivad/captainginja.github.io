@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Crap Jokes
-permalink: /crap-jokes
+permalink: /jokes/crap-jokes
 ---
 # Crap Jokes
 
@@ -9,8 +9,7 @@ I am a huge fan of "crap jokes", i.e. jokes that are so bad they are actually go
 also make you smile.  In America these are generally known as "Dad jokes" but I don't see why fathers should have a
 monopoly on them.  Anyone can tell them, what matters is that they are crap.
 
-Here's a selection.  Be warned, some of these are not in the best possible taste, but they are
-still funny.
+Here's a selection.  Be warned, some of these are not in the best possible taste, but they're still funny.
 
 &nbsp;
 
@@ -69,7 +68,7 @@ A dyslexic man walks into a bra ...
 Interviewer:  What would you consider one of your strengths?
 Candidate:    I perform under pressure
 Interviewer:  Can you give me an example?
-Candidate:    OK, ... &lt;takes deep breath&gt;
+Candidate:    OK, ... <takes deep breath>
 Candidate:    Mm ba ba de
 Candidate:    Um bum ba de
 Candidate:    Um bu bu bum da de
@@ -221,7 +220,7 @@ A: The hip replacement guy
 * Impolite - A flaming goblin
 * Propaganda - A gentlemanly goose
 * Incandescent - Rolling downhill in a tin
-* Inaccurate - A sexual position involving a lower member of the clergy
+* Inaccurate - A sexual position involving a junior member of the clergy
 * Polygon - A dead parrot (with due respect given to Monty Python)
 * Politics - A parrot suffering from muscle spasms
 * Venezuela - A gondolier with a harpoon

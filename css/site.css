@@ -52,7 +52,7 @@ General styles
     .masthead {
       display: grid;
       /* grid-template-columns: 75% auto; */
-      grid-template-columns: minmax(auto, auto) minmax(auto, 15em);
+      grid-template-columns: minmax(auto, auto) minmax(auto, 20em);
       grid-template-rows: auto auto;
     }
   }

@@ -1,12 +1,12 @@
 ---
 layout: page
 title: Intellectual Jokes
-permalink: /intellectual-jokes
+permalink: /jokes/intellectual-jokes
 ---
 # Intellectual Jokes
 
-As well as being a huge fan of ["crap jokes"]({{ site.baseurl }}crap-jokes) I'm also rather partial to "intellectual
-jokes", i.e. those that require a certain esoteric knowledge to get.  Here's a selection.
+As well as being a huge fan of ["crap jokes"]({{ site.baseurl }}crap-jokes) I'm also rather partial to
+"intellectual jokes", i.e. those that require a certain esoteric knowledge to get.  Here's a selection.
 
 &nbsp;
 
