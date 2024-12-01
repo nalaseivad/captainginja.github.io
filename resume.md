@@ -4,7 +4,7 @@ title: Resume
 permalink: /resume
 ---
 
-<object data="/docs/alan_davies_resume.pdf"
+<object data="/docs/alan-davies-resume.pdf"
         type="application/pdf"
 				width="800px"
 				height="2100px"
