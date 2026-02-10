@@ -112,7 +112,7 @@ EXEC sp_executesql @sql;
 ```
 
 Example 7 - Returns 42.  Even though we don't specifically supply a value for the parameter @number in the call to EXEC,
-this bringsthe variable into local scope and its current value becomes visible inside the dynamic SQL execution.
+this brings the variable into local scope and its current value becomes visible inside the dynamic SQL execution.
 
 ```sql
 DECLARE @number int = 42;
