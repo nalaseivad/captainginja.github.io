@@ -128,7 +128,7 @@ parents' dinner table.  There's another blog post that I'll write one day.
 
 I didn't really return to computers until my first job after university.  I did use some of the machines in the college
 computer lab to write up my CV for job applications during my final year but the main thing I recall from that is having
-to learn how to use MS World on a Mac and it taking me ages.  So much for the intuitiveness of Macs.  I was thrust into
+to learn how to use MS Word on a Mac and it taking me ages.  So much for the intuitiveness of Macs.  I was thrust into
 the world of MS DOS with Lotus 123 (which seemed so natural and powerful) and Word Perfect (which I hated, I used to
 write letters in Lotus 123 ... honestly).  I got myself a Dell PC for home, because my neighbor worked for Dell and
 could get me a deal.  I think it was a 486 20MHz with a 40MB hard drive.  It came with Windows 3.1 which seemed so cool
