@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Countdown Numbers Solver</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <h1>Countdown Numbers Solver</h1>
+
+    <div class="section">
+        <label for="target">Target Number (1–999)</label>
+        <input type="text" class="target-input" id="target"
+               inputmode="numeric" pattern="[0-9]*"
+               autocomplete="off"
+               placeholder="e.g. 952">
+    </div>
+
+    <div class="section">
+        <label>Pick 6 Numbers</label>
+        <div class="small-grid" id="smallGrid"></div>
+        <div class="large-grid" id="largeGrid"></div>
+        <input type="text" class="also-input" id="manualInput"
+               inputmode="numeric"
+               autocomplete="off"
+               placeholder="Or type numbers separated by spaces">
+        <div class="selected-area" id="selectedArea">
+            <span class="placeholder-text">Tap numbers above or type below…</span>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="btn-row">
+            <button class="solve-btn" id="solveBtn" type="button">Solve</button>
+            <button class="clear-btn" id="clearBtn" type="button">Clear</button>
+        </div>
+        <div class="error-msg" id="errorMsg"></div>
+    </div>
+
+    <div class="results" id="results"></div>
+</div>
+
+<script type="module" src="ui.js"></script>
+</body>
+</html>
