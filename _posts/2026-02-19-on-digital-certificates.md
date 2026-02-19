@@ -65,8 +65,10 @@ Some specific examples ...
 * Device Identity (IoT).
 * Document Signing.  
 
-Digital certificates are but a part of the broader concept of
-[Public Key Infrastructure (PKI)](https://en.wikipedia.org/wiki/Public_key_infrastructure).
+Digital certificates are but a part of the broader concept of [Public Key Infrastructure
+(PKI)](https://en.wikipedia.org/wiki/Public_key_infrastructure).  They fundamentally rely on the concept of public key
+cryptography, which I wrote another primer blog post on [here]({{ site.baseurl }}{% post_url
+2026-02-18-on-public-key-cryptography %}).
 
 # Are certificates standardized?
 

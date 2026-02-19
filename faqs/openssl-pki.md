@@ -7,7 +7,7 @@ faq: true
 
 # Background
 
-See this [blog post]({{ site.baseurl }}{% post_url 2026-02-18-on-digital-certificates %}) for some background on what
+See this [blog post]({{ site.baseurl }}{% post_url 2026-02-19-on-digital-certificates %}) for some background on what
 this is all about.
 
 # The recipe
