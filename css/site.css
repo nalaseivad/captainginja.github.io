@@ -200,14 +200,49 @@ img {
   font-size: 1em;
 }
 
+/*
 .post-body table {
   margin-left: auto;
   margin-right: auto;
 }
+*/
 
+/*
 .post-body table tbody {
   list-style-position: outside;
   margin-left: 2em;
+}
+*/
+
+.post-body table {
+  margin-left: auto;
+  margin-right: auto;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  border: 1px solid #000;
+}
+
+/* Header */
+.post-body thead {
+  background-color: #f5f7fa;
+}
+
+.post-body th {
+  text-align: left;
+  font-weight: 600;
+  padding: 0.2rem 0.2rem;
+}
+
+/* Cells */
+.post-body td {
+  padding: 0.2rem 0.2rem;
+  vertical-align: top;
+}
+
+/* Zebra striping */
+.post-body tbody tr:nth-child(even) {
+  background-color: #fafafa;
 }
 
 .post-body .quote {

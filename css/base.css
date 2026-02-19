@@ -32,22 +32,72 @@ h6 {
   margin-bottom: 0.5em;
   margin-left: 0;
   margin-right: 0;
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
   line-height: 1.1;
 }
 
 h1 {
   font-size: 2em;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
 }
 
 h2 {
   font-size: 1.75em;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+}
+
+/*
+h3 {
+  font-size: 1.5em;
 }
 
 h3 {
   font-size: 1.5em;
+  display: inline-block;
+  border-bottom: 2px solid #666;
+  padding-bottom: 2px;
 }
+
+h3 {
+  font-size: 1.5em;
+  display: inline-block;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+}
+
+h3 {
+  font-size: 1.5em;
+  padding-left: 0.6em;
+  border-left: 4px solid #888;
+}
+
+h3 {
+  font-size: 1.4em;
+  font-variant: small-caps;
+  letter-spacing: 0.05em;
+}
+
+h3 {
+  font-size: 1.5em;
+  background-color: rgba(0, 0, 0, 0.05);
+  padding: 0.25em 0.5em;
+  border-radius: 4px;
+}
+
+h3 {
+  font-size: 1.5em;
+  margin-top: 2em;
+  margin-bottom: 0.5em;
+}
+*/
+
+
+h3 {
+  font-size: 1.5em;
+  font-style: italic;
+}
+
+
 
 p,
 ul,
