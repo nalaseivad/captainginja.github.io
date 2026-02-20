@@ -241,11 +241,244 @@ and docs about this online.  Here's [one](https://www.thesslstore.com/blog/root-
 found.  All we really need to know now is that it's common practice to use a Root CA cert to issue/sign various
 intermediate CA certs that are then used to issue/sign individual certs for actual use in securing endpoints.
 
+# Certificate extensions for use cases
+
+Certificates support extensions and different extensions are required for different use cases.  A few extensions: Basic
+Constraints, Key Usage, Extended Key Usage and Subject Alternative Name (SAN); do most of the real work.  Everything
+else is supporting material for policy, revocation and path building.
+
+Here's a quick catalogue of common certificate use cases and the extensions that matter.
+
+A few notes first:
+
+* Basic Constraints is what distinguishes a CA cert from an end-entity cert
+* Key Usage constrains what the key is allowed to do at a low level (sign, key agreement, key encipherment, etc)
+* Extended Key Usage constrains application intent (serverAuth, clientAuth, codeSigning, etc)
+* A SAN is required for TLS names in modern clients.  Browsers treat a TLS server cert without a SAN as invalid.
+* “Required” varies by ecosystem.  Some things are hard requirements (A SAN for TLS), others are strong expectations
+  (EKU presence).
+
+## A) Root CA certificate (trust anchor)
+
+Purpose: sign other CA certificates, publish CRLs
+
+Required extensions and values:
+
+* basicConstraints = critical, CA:true, pathlen:<n> (typical pathlen:1 for a root that only signs intermediates)
+* keyUsage = critical, keyCertSign, cRLSign
+* subjectKeyIdentifier = hash
+* authorityKeyIdentifier = keyid:always,issuer (for a self-signed root it still helps tooling)
+
+Common extras:
+
+* nameConstraints (if you want to constrain what DNS namespaces the CA can issue for)
+* certificatePolicies (if you run an explicit policy regime)
+* crlDistributionPoints, authorityInfoAccess (if you publish CRL or OCSP URLs)
+
+## B) Intermediate CA certificate
+
+Purpose: sign end-entity certs, possibly other intermediates
+
+Required extensions and values:
+
+* basicConstraints = critical, CA:true, pathlen:0 (common when it only signs leaf certs)
+* keyUsage = critical, keyCertSign, cRLSign
+* subjectKeyIdentifier = hash
+* authorityKeyIdentifier = keyid:always,issuer
+
+## C) TLS server certificate
+
+Purpose: authenticate a server to clients
+
+Required extensions and values:
+
+* basicConstraints = critical, CA:false
+* keyUsage = critical, digitalSignature
+* extendedKeyUsage = serverAuth
+* subjectAltName = DNS:... (and IP:... only if clients connect by IP)
+
+TLS 1.3 relies on signatures, so keyUsage = digitalSignature is the essential one.
+
+Helpful:
+
+* authorityKeyIdentifier, subjectKeyIdentifier
+* crlDistributionPoints, authorityInfoAccess if you do revocation checking
+
+## D) TLS client certificate (mTLS)
+
+Purpose: authenticate a client to a server
+
+Required extensions and values:
+
+* basicConstraints = critical, CA:false
+* keyUsage = critical, digitalSignature
+* extendedKeyUsage = clientAuth
+
+Often also needed depending on environment:
+
+* subjectAltName for a client identity value, sometimes email: or otherName: (common in enterprise setups)
+
+## E) Dual-purpose TLS certificate (serverAuth + clientAuth)
+
+Purpose: one cert used both ways (common in internal mTLS)
+
+Required extensions and values:
+
+* same as TLS server but extendedKeyUsage = serverAuth, clientAuth
+* SAN rules same as server side if it will be used as a server cert
+
+## F) Code signing certificate
+
+Purpose: sign binaries, scripts, packages
+
+Required extensions and values:
+
+* basicConstraints = critical, CA:false
+* keyUsage = critical, digitalSignature
+* extendedKeyUsage = codeSigning
+
+Some ecosystems also tolerate contentCommitment aka nonRepudiation, but it is rarely required.
+
+## G) Email protection certificate (S/MIME)
+
+Purpose: sign and or encrypt email
+
+Required extensions and values:
+
+* basicConstraints = critical, CA:false
+* extendedKeyUsage = emailProtection
+
+KeyUsage depends on what you want.  If you need signing then ...
+
+  * keyUsage = digitalSignature (sometimes also contentCommitment)
+
+If you need encryption then ...
+
+  * keyUsage = keyEncipherment (RSA) or keyAgreement (EC)
+
+Common:
+
+* SAN with email: identity is often expected
+
+## H) Document signing certificate
+
+Purpose: sign documents (PDF, Office, etc)
+
+Required extensions and values:
+
+* Usually same as code signing or email signing, depending on stack
+* keyUsage = digitalSignature
+* EKU is vendor-specific:
+* Some stacks use emailProtection
+* Some use a dedicated document signing EKU
+
+In practice, if you control the verifier, you define the EKU.
+
+## I) Time stamping authority (TSA)
+
+Purpose: RFC 3161 timestamps
+
+Required extensions and values:
+
+* basicConstraints = critical, CA:false
+* keyUsage = critical, digitalSignature
+* extendedKeyUsage = timeStamping
+
+## J) OCSP responder certificate
+
+Purpose: sign OCSP responses
+
+Required extensions and values:
+
+* basicConstraints = critical, CA:false
+* keyUsage = critical, digitalSignature
+* extendedKeyUsage = OCSPSigning
+
+Common:
+
+* authorityInfoAccess in issuing CA pointing to OCSP URL
+* Responder cert is often issued by the same CA it serves
+
+## K) IPsec IKE certificate
+
+Purpose: authenticate VPN endpoints for IKE
+
+Required extensions and values:
+
+* basicConstraints = critical, CA:false
+* keyUsage = digitalSignature (plus sometimes keyAgreement depending on suite and expectations)
+* extendedKeyUsage = ipsecIKE
+* SAN often includes DNS or IP, depending on how peers identify each other
+
+## L) Smart card logon (Microsoft AD)
+
+Purpose: Windows smart card auth
+
+Extensions and values typically expected by Windows:
+
+* extendedKeyUsage = smartcardLogon, clientAuth
+* SAN or Subject mapping depends on AD configuration
+
+This is very ecosystem-specific, but EKU is the main “gate”.
+
 # A basic PKI setup
 
-Managing PKI across an enterprise is a daunting a complex task and there are whole sectors of companies that sell
-product suites to help implement and manage PKI.  For a small setup though, you can do it all yourself just using
-OpenSSL.  I document such a basic setup [here]({{ site.baseurl }}/faqs/openssl-pki/).
+Running a PKI across an enterprise is a daunting and complex task, and there are whole many companies that sell product
+suites to help implement and manage it.  For a small setup though, you can do it all yourself just using OpenSSL.  I
+document such a basic setup in a FAQ doc [here]({{ site.baseurl }}/faqs/openssl-pki/).
+
+Here's the essential workflow though.  See the FAQ doc for the specific commands.
+
+We first have to create our CAs, a root and an intermediate signed by the root.  We create a private key and a cert for
+each.  Config files are created as part of the process.  These end up being stored in the following files ...
+
+```
+~/pki/openssl-template.cnf                   # Shared config template
+
+~/pki/root/openssl-root.cnf                  # Root CA config
+~/pki/root/private/ca.key.pem                # Root CA private key (may be encrypted with a password)
+~/pki/root/certs/ca.cert.pem                 # Root CA cert
+
+~/pki/intermediate/openssl-intermediate.cnf  # Intermediate CA config
+~/pki/intermediate/private/ca.key.pem        # Intermediate CA private key (may be encrypted with a password)
+~/pki/intermediate/certs/ca.cert.pem         # Intermediate CA cert
+```
+
+Then, to create a new server cert, we first need to create a private key for the new server ...
+
+```
+~/pki/certs/server1/server.key.pem           # Typically NOT encrypted with a password
+```
+
+Next, we need to create a config file that describes the specifics of the new server's cert.  This is where the cert's
+extensions and values will be specified according to its prospective use case.
+
+```
+~/pki/tmp/server1.cnf
+```
+
+Next, we need to create a certificate signing request (a CSR) from the config, signed with the server's private key
+...
+
+```
+~/pki/csr/server1.csr.pem
+```
+
+Next, we use the CSR to create a server cert signed by the Intermediate CA private key ...
+
+```
+~/pki/certs/server1/server.cert.pem        # Will require entry of the intermediate CA cert password if set
+```
+
+Finally, we take the server's private key and cert ...
+
+```
+~/pki/certs/server1/server.key.pem
+~/pki/certs/server1/server.cert.pem
+```
+
+... and export them to the destination server to be installed into the appropriate store so that the cert can be used by
+the appropriate service.
 
 # SSL/TLS
 
