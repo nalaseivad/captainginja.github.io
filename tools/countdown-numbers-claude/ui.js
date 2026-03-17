@@ -76,7 +76,7 @@ window.removeNumber = function removeNumber(idx) {
 function renderSelected() {
     const area = document.getElementById('selectedArea');
     if (selected.length === 0) {
-        area.innerHTML = '<span class="placeholder-text">Tap numbers above or type below\u2026</span>';
+        area.innerHTML = '<span class="placeholder-text">Tap numbers below or type in the box\u2026</span>';
     } else {
         area.innerHTML = selected.map((n, i) =>
             `<span class="chip" onclick="removeNumber(${i})">${n} <span class="x">\u2715</span></span>`
@@ -150,11 +150,31 @@ document.getElementById('solveBtn').addEventListener('click', () => {
                 + `Found ${count} solution${plural} in ${elapsed}s`
                 + '</div>';
             html += '<div class="results-list">';
-            for (const r of sorted) {
-                html += `<div class="expr-item">${displayStr(r)} = ${targetVal}</div>`;
+            for (let i = 0; i < sorted.length; i++) {
+                const exprText = `${displayStr(sorted[i])} = ${targetVal}`;
+                html += `<div class="expr-item">`;
+                html += `<button class="copy-btn" data-idx="${i}" title="Copy to clipboard">📋</button>`;
+                html += `<span class="expr-text">${exprText}</span>`;
+                html += `</div>`;
             }
             html += '</div>';
             resultsEl.innerHTML = html;
+
+            // Add click handlers for copy buttons
+            resultsEl.querySelectorAll('.copy-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const idx = parseInt(btn.dataset.idx, 10);
+                    const text = `${displayStr(sorted[idx])} = ${targetVal}`;
+                    navigator.clipboard.writeText(text).then(() => {
+                        btn.classList.add('copied');
+                        btn.textContent = '✓';
+                        setTimeout(() => {
+                            btn.classList.remove('copied');
+                            btn.textContent = '📋';
+                        }, 1500);
+                    });
+                });
+            });
         }
         document.getElementById('solveBtn').disabled = false;
     }));

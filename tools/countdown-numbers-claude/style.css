@@ -91,20 +91,26 @@ label {
     min-height: 48px;
     padding: 10px 4px;
     font-size: 1.1rem;
-    border: 2px solid #333;
+    font-weight: 600;
+    border: none;
     border-radius: 10px;
-    background: #16213e;
+    background: linear-gradient(180deg, #3a6ea5 0%, #2c5a8a 100%);
     color: #fff;
     cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     -webkit-tap-highlight-color: transparent;
-    transition: background 0.12s, transform 0.1s;
+    transition: background 0.12s, transform 0.1s, box-shadow 0.12s;
     user-select: none;
     touch-action: manipulation; /* Prevents 300ms delay on mobile */
 }
-.num-btn:hover { background: #1a3a5c; border-color: #0f3460; }
-.num-btn:active { transform: scale(0.93); }
-.num-btn.large-num { background: #1a2744; }
-.num-btn:disabled { opacity: 0.35; cursor: not-allowed; transform: none; }
+.num-btn:hover {
+    background: linear-gradient(180deg, #4a7eb5 0%, #3c6a9a 100%);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
+}
+.num-btn:active { transform: scale(0.93); box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3); }
+.num-btn.large-num { background: linear-gradient(180deg, #5c4a8a 0%, #4a3a70 100%); }
+.num-btn.large-num:hover { background: linear-gradient(180deg, #6c5a9a 0%, #5a4a80 100%); }
+.num-btn:disabled { opacity: 0.35; cursor: not-allowed; transform: none; box-shadow: none; }
 
 /* --- Selected number chips --- */
 
@@ -112,7 +118,7 @@ label {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
-    margin-top: 10px;
+    margin-bottom: 12px;
     min-height: 48px;
     padding: 8px;
     border: 2px dashed #333;
@@ -199,16 +205,39 @@ label {
 }
 
 .expr-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
     padding: 10px 12px;
     margin-bottom: 4px;
     background: #16213e;
     border-radius: 8px;
     font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
     font-size: 0.95rem;
+}
+
+.expr-item .expr-text {
     /* Allow long expressions to scroll horizontally rather than break */
     overflow-x: auto;
     white-space: nowrap;
+    flex: 1;
 }
+
+.copy-btn {
+    flex-shrink: 0;
+    background: none;
+    border: none;
+    color: #666;
+    cursor: pointer;
+    padding: 4px 6px;
+    font-size: 0.85rem;
+    border-radius: 4px;
+    transition: color 0.15s, background 0.15s;
+    -webkit-tap-highlight-color: transparent;
+}
+.copy-btn:hover { color: #4a9eff; background: rgba(74, 158, 255, 0.1); }
+.copy-btn.copied { color: #2ecc71; }
+.copy-btn.copied:hover { color: #2ecc71; background: rgba(46, 204, 113, 0.1); }
 
 .no-results {
     text-align: center;
@@ -273,6 +302,7 @@ label {
     .expr-item {
         font-size: 1rem;
         padding: 12px 16px;
+        gap: 12px;
     }
 
     .results-list { max-height: 70vh; }
