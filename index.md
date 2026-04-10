@@ -13,12 +13,12 @@ script_ready_eval_string: >
          '/images/escher_circle_limit_with_butterflies.jpg' ])
 ---
 
-I'm Alan Davies - a data/infrastructure architect and software engineer with way too many years of experience building
-database platforms, leading engineering teams and solving hard technical problems, mostly in the financial industry.
-I'm also an Englishman, occasional Welshman, pretend American, fixer, geek, frustrated guitarist, husband and dad.
+I'm Alan Davies - a data/infrastructure architect and software engineer with many years of experience building database
+platforms, leading engineering teams and solving hard technical problems, mostly in the financial industry. I'm also an
+Englishman, occasional Welshman, pretend American, fixer, geek, frustrated guitarist, husband and dad.
 
-This is where I post my personal writing on topics that I claim to know a bit about, mostly data, software and
-mathematics.  Occassionally I may digress into guitars, electronics and whatever else has caught my attention, including
-how to [tie your shoes](https://www.youtube.com/watch?v=m_K3kng_N4I).
+This is where I post my personal writing on topics that I care about, mostly data, software and mathematics.
+Occasionally I may digress into guitars, electronics and whatever else has caught my attention, including how to [tie
+your shoes](https://www.youtube.com/watch?v=m_K3kng_N4I).
 
 Read the [blog](/blog), browse the [FAQs](/faqs) or learn more [about me](/about).
