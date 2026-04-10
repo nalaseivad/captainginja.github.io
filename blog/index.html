@@ -6,8 +6,10 @@ layout: blog
   <h1 class="title">All blog posts</h1>
 </div>
 
+{% assign visible_posts = site.posts | where_exp: "post", "post.hide != true" %}
+
 <ul class="blog-post-list">
-  {% for post in site.posts %}
+  {% for post in visible_posts %}
   <li class="blog-post-list-item">
     <div class="date">{{ post.date | date_to_string }}</div>
     <div class="featured-image-container" width="100">

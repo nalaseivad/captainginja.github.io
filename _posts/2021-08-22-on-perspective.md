@@ -8,6 +8,7 @@ featured_image_title: "The Ted abides"
 featured_image_width: 800
 featured_image_link: https://www.youtube.com/watch?v=-dS4Lrhd7wk
 tags: [life]
+hide: true
 ---
 
 A long time ago in a galaxy far, far away (Tokyo, to be precise) my wife and I welcomed our first born into the world.
