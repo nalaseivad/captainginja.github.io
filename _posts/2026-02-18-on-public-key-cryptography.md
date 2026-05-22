@@ -74,7 +74,7 @@ In both cases ...
 * Inverses exist
 * There is an identity element
 
-That algebraic structure is what makes them usable for encryption, signatures, and key exchange.
+That algebraic structure is what makes them usable for encryption, signatures and key exchange.
 
 # Uses
 
