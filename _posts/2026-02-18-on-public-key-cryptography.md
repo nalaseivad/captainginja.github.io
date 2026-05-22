@@ -83,7 +83,7 @@ That algebraic structure is what makes them usable for encryption, signatures an
 The public key performs a transformation and only the private key can reverse it.
 
 RSA was originally designed for encryption (Encryption: $$c = m^e \bmod n$$, Decryption: $$m = c^d \bmod n$$).  The
-public key is (n, e) and the private key is d.
+public key is (n, e) and the private key is (n, d).
 
 ECC is not usually used directly for encryption.
 
